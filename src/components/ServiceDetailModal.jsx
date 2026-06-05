@@ -26,11 +26,35 @@ export default function ServiceDetailModal({ selectedService, setSelectedService
         </div>
         <div className="modal-body">
           <p className="modal-large-desc">{selectedService.detail}</p>
-          <div className="modal-highlights">
-            <div className="highlight-tag"><Check size={14} className="text-green" /> Production Performance SLA</div>
-            <div className="highlight-tag"><Check size={14} className="text-green" /> Comprehensive Security Audited</div>
-            <div className="highlight-tag"><Check size={14} className="text-green" /> Dedicated Senior Engineers</div>
-          </div>
+          
+          {selectedService.servicesList && (
+            <div className="modal-services-section">
+              <h4 className="modal-section-title">What We Offer</h4>
+              <div className="modal-services-grid">
+                {selectedService.servicesList.map((srv, idx) => (
+                  <div key={idx} className="modal-srv-item">
+                    <span className="modal-srv-dot"></span>
+                    <span>{srv}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {selectedService.benefitsList && (
+            <div className="modal-benefits-section">
+              <h4 className="modal-section-title">Key Benefits</h4>
+              <div className="modal-benefits-grid">
+                {selectedService.benefitsList.map((bnf, idx) => (
+                  <div key={idx} className="modal-bnf-item">
+                    <Check size={14} className="modal-bnf-check" />
+                    <span>{bnf}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <button className="modal-action-btn" onClick={handleDiscussService}>
             Discuss This Service <ArrowRight size={16} />
           </button>

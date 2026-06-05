@@ -1,49 +1,52 @@
-import { Code, Smartphone, Cloud, Brain, Shield, Database } from 'lucide-react';
+import { Globe, Cpu, MessageSquare, Layout, Code, ShieldCheck } from 'lucide-react';
 
-export const HERO_WORDS = ["Digital Systems", "Custom Software", "Cloud Architectures", "AI Solutions", "Secure Networks"];
+export const HERO_WORDS = ["Startup Websites", "AI Automations", "AI Chatbots", "UI/UX Designs", "Custom Web Apps"];
 
 export const SERVICES = [
   {
-    id: 'software',
+    id: 'websites',
+    icon: <Globe className="service-icon" />,
+    title: 'Startup Website Development',
+    short: 'Build a strong online presence with modern, high-converting websites.',
+    detail: 'Clienxo designs and engineers premium websites that captivate visitors, load instantly, and drive organic startup growth. From custom landing pages to robust Next.js product sites, we focus on responsive web performance, SEO-friendly HTML structures, and conversion optimization.',
+    servicesList: ['Startup Landing Pages', 'Business Websites', 'SaaS Websites', 'Portfolio Websites', 'Product Launch Websites', 'Custom Website Development'],
+    benefitsList: ['Professional Brand Presence', 'Faster Customer Acquisition', 'Mobile Responsive Design', 'SEO-Friendly Development']
+  },
+  {
+    id: 'automation',
+    icon: <Cpu className="service-icon" />,
+    title: 'AI Automation Solutions',
+    short: 'Reduce manual work and improve business efficiency through automation.',
+    detail: 'Free your team from repetitive manual tasks. We design intelligent workflow integrations, lead processing, custom API integrations, and email triggers to streamline operations and ensure zero human error.',
+    servicesList: ['Workflow Automation', 'Email Automation', 'Lead Management Automation', 'CRM Automation', 'Report Generation Automation', 'Custom AI Workflows'],
+    benefitsList: ['Save Time & Resources', 'Increase Productivity', 'Reduce Human Errors', 'Scale Operations Faster']
+  },
+  {
+    id: 'chatbots',
+    icon: <MessageSquare className="service-icon" />,
+    title: 'AI Chatbots & AI Agents',
+    short: 'Provide instant customer support and automate business communication.',
+    detail: 'Provide instant 24/7 engagement for your visitors. We build context-aware AI assistants, lead capture bots, and appointment setters that connect to your databases and answer user tickets instantly.',
+    servicesList: ['Website AI Chatbots', 'Lead Generation Bots', 'Customer Support Bots', 'Appointment Booking Bots', 'AI Virtual Assistants', 'Sales Assistance Bots'],
+    benefitsList: ['24/7 Customer Support', 'Higher Lead Conversion', 'Faster Response Time', 'Improved Customer Experience']
+  },
+  {
+    id: 'uiux',
+    icon: <Layout className="service-icon" />,
+    title: 'UI/UX Design',
+    short: 'Create user-friendly and visually appealing digital products.',
+    detail: 'A premium product starts with design that makes sense. We engineer sleek user interfaces, custom SaaS dashboards, and mobile views. We wireframe, prototype, and conduct UX audits to guarantee maximum conversion and retention rates.',
+    servicesList: ['Website UI Design', 'SaaS Dashboard Design', 'Mobile App UI Design', 'Wireframing', 'Prototyping', 'UX Research & Optimization'],
+    benefitsList: ['Better User Engagement', 'Higher Conversion Rates', 'Modern & Professional Design', 'Improved User Retention']
+  },
+  {
+    id: 'customapps',
     icon: <Code className="service-icon" />,
-    title: 'Software Development',
-    short: 'Tailored desktop, web, and enterprise automation platforms built using top tech stacks.',
-    detail: 'Our engineering team designs enterprise-grade architectures that solve operational bottlenecks. We develop scalable solutions with React, Node.js, Python, and Go, focusing on microservices patterns, continuous integration, and clean code principles.'
-  },
-  {
-    id: 'mobile',
-    icon: <Smartphone className="service-icon" />,
-    title: 'Mobile Applications',
-    short: 'Premium native and cross-platform mobile apps for iOS and Android devices.',
-    detail: 'We build high-performance mobile apps with fluid user interfaces using Flutter, React Native, and Swift/Kotlin. From real-time messaging services to secure offline synchronization, we guarantee native responsiveness.'
-  },
-  {
-    id: 'cloud',
-    icon: <Cloud className="service-icon" />,
-    title: 'Cloud & Infrastructure',
-    short: 'AWS, Azure, and Google Cloud setups optimized for cost, security, and zero-downtime.',
-    detail: 'Ensure maximum availability through Infrastructure as Code (Terraform), Kubernetes orchestration, serverless migrations, and advanced DevOps deployment pipelines that scale intelligently to client demands.'
-  },
-  {
-    id: 'ai',
-    icon: <Brain className="service-icon" />,
-    title: 'AI & Data Analytics',
-    short: 'Intelligent automation, predictive machine learning models, and smart dashboard reporting.',
-    detail: 'Transform your business decisions with modern artificial intelligence. We offer custom LLM prompt engineering, machine learning pipelines, predictive analysis models, and interactive BI visual reporting.'
-  },
-  {
-    id: 'security',
-    icon: <Shield className="service-icon" />,
-    title: 'Cybersecurity & Audits',
-    short: 'Complete systems protection, penetration testing, compliance checks, and zero-trust setups.',
-    detail: 'Identify vulnerabilities before attackers do. Our security experts run comprehensive penetration tests, secure API endpoints, set up multi-factor OAuth systems, and ensure HIPAA/GDPR/SOC2 compliances.'
-  },
-  {
-    id: 'database',
-    icon: <Database className="service-icon" />,
-    title: 'Database Architecture',
-    short: 'High-performance database modeling, migrations, optimization, and scaling.',
-    detail: 'We optimize query speeds and design database layers using PostgreSQL, MongoDB, Redis, and Elasticsearch, ensuring instant analytical querying and zero-loss backup recovery schemes.'
+    title: 'Custom Web Applications',
+    short: 'Develop scalable software solutions tailored to startup needs.',
+    detail: 'Scale your startup operations with custom business management software. We develop high-speed admin dashboards, CRM panels, booking apps, and client portals built to match your team workflows perfectly.',
+    servicesList: ['Admin Dashboards', 'CRM Systems', 'Business Management Portals', 'Appointment Management Systems', 'Client Management Systems', 'Custom Business Applications'],
+    benefitsList: ['Streamlined Operations', 'Centralized Business Management', 'Scalable Infrastructure', 'Increased Efficiency']
   }
 ];
 
@@ -61,7 +64,7 @@ export const PROCESS_STEPS = [
   {
     step: '03',
     title: 'Agile Development',
-    desc: 'Our senior developers write modular, clean code in weekly sprints, keeping you updated in real-time through staging environment previews.'
+    desc: 'Our developers write modular, clean code in weekly sprints, keeping you updated in real-time through staging environment previews.'
   },
   {
     step: '04',
@@ -77,7 +80,7 @@ export const PROCESS_STEPS = [
 
 export const PROJECTS = [
   {
-    title: 'Clienxo ERP Suite',
+    title: 'Clienxo CRM Suite',
     category: 'web',
     desc: 'A comprehensive cloud-based resource planning dashboard for managing global supply chains and payroll automation.',
     tags: ['React', 'PostgreSQL', 'NodeJS', 'AWS'],
