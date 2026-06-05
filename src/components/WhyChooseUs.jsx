@@ -37,7 +37,7 @@ const CHOOSE_CARDS = [
 
 const STATS_DATA = [
   { label: 'Uptime SLA', target: 99.9, suffix: '%', decimals: 1 },
-  { label: 'Projects Delivered', target: 50, suffix: '+', decimals: 0 },
+  { label: 'Completed Works', target: 10, suffix: '', decimals: 0 },
   { label: 'Data Security Audits', target: 100, suffix: '%', decimals: 0 },
   { label: 'Response Time', target: 15, suffix: 'm', decimals: 0 }
 ];

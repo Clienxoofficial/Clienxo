@@ -308,8 +308,8 @@ export default function About({ handleScrollTo, openContact }) {
             <div className="ill-card-floating card-2">
               <Users size={18} className="ill-icon-floating text-cyan" />
               <div>
-                <h4>Senior Squad</h4>
-                <p>100% In-House Devs</p>
+                <h4>4 Expert Devs</h4>
+                <p>3+ Years Experience</p>
               </div>
             </div>
           </div>
