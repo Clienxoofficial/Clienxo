@@ -55,13 +55,13 @@ export default function Hero({ handleScrollTo, openContact }) {
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <span className="num text-gradient-neon">10+</span>
-              <span className="label">Technologies</span>
+              <span className="num text-gradient-neon">15+</span>
+              <span className="label">Expert Stacks</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <span className="num text-gradient-neon">24/7</span>
-              <span className="label">Global Support</span>
+              <span className="num text-gradient-neon">Agile</span>
+              <span className="label">Slack Support</span>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ export default function About({ handleScrollTo, openContact }) {
       <div className="section-container">
         <div className="section-header about-section-header">
           <span className="section-mini-title">WHO WE ARE</span>
-          <h2 className="section-title">Epic Beginnings — Crafting Futures With <span className="text-gradient-neon">Excellence</span></h2>
+          <h2 className="section-title">Who We Are — Architecting Modern <span className="text-gradient-neon">Digital Systems</span></h2>
           <div className="header-bar about-header-bar"></div>
         </div>
 
@@ -315,7 +315,7 @@ export default function About({ handleScrollTo, openContact }) {
           </div>
 
           <div className="about-text-content">
-            <h3>Empowering Progress: Our Story, Your Journey, Shared Excellence.</h3>
+            <h3>Accelerating Innovation: Building the Next Generation of Software.</h3>
             <p>
               At Clienxo, we don&apos;t believe in generic templates or standard cut-and-paste software. We believe that custom businesses deserve tailored technological solutions. Every database we optimize, every UI detail we animate, and every API server we launch is hand-crafted to achieve maximum efficiency.
             </p>

@@ -16,7 +16,7 @@ export default function Footer({ handleScrollTo, openContact }) {
               <Sparkles className="logo-spark" />
               <span className="logo-text" data-text="CLIENXO">CLIEN<span className="text-gradient">XO</span></span>
             </div>
-            <p className="mt-4">Empowering global scale-ups and enterprises with reliable engineering, top-tier architectures, and secure databases.</p>
+            <p className="mt-4">We build next-generation web platforms, AI applications, and custom digital systems for scale-ups and modern startups.</p>
             <div className="footer-socials">
               <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Briefcase size={18} /></a>
               <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Users size={18} /></a>
@@ -64,7 +64,7 @@ export default function Footer({ handleScrollTo, openContact }) {
               <a href={WA_BASE} target="_blank" rel="noreferrer" className="support-wa-link">
                 Chat on WhatsApp
               </a>
-              <p className="support-sla">SLA Monitoring active 24/7/365</p>
+              <p className="support-sla">Direct developer support via WhatsApp, Email & Slack</p>
             </div>
           </div>
         </div>
