@@ -19,7 +19,7 @@ export default function Testimonials() {
       <div className="section-container">
         <div className="section-header">
           <span className="section-mini-title">TESTIMONIALS</span>
-          <h2 className="section-title uppercase">Voices of Trust: Client Stories, Testimonials That Illuminate Our Shared Success</h2>
+          <h2 className="section-title uppercase">Loved by Founders & Product Teams</h2>
           <div className="header-bar"></div>
         </div>
 

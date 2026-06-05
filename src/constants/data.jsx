@@ -122,26 +122,26 @@ export const PROJECTS = [
 
 export const TESTIMONIALS = [
   {
-    quote: "Clienxo revolutionized our operations. The custom ERP they engineered is lightning fast, extremely beautiful, and automated 70% of our manual workflows. Their attention to detail is outstanding.",
+    quote: "Clienxo shipped our MVP in just 4 weeks! The React web app they engineered is lightning fast, beautiful, and our first 1,000 beta users loved it. Their speed and code quality are outstanding.",
     author: "Sarah Jenkins",
-    role: "Chief Operating Officer",
-    company: "Apex Global Logistics",
+    role: "Co-Founder & CEO",
+    company: "AeroSaaS (YC W25)",
     stars: 5,
     avatar: "SJ"
   },
   {
-    quote: "Working with Clienxo was a masterclass in agile development. They launched our mobile telehealth application on time, within budget, and successfully helped us navigate the complex HIPAA security audits.",
+    quote: "Partnering with Clienxo was a game-changer for our launch. They built our AI-powered mobile app with a seamless UX and robust API integration, helping us secure our seed round in record time.",
     author: "Dr. Ryan Vance",
-    role: "Co-Founder",
-    company: "HealthVibe Technologies",
+    role: "Founder",
+    company: "HealthVibe AI",
     stars: 5,
     avatar: "RV"
   },
   {
-    quote: "Our old database crashed during traffic surges. Clienxo rebuilt our entire cloud pipeline on AWS, securing our systems and optimizing costs. We experienced zero downtime during our Black Friday rush.",
+    quote: "Our database was lagging under rapid user growth. Clienxo refactored our entire backend architecture on AWS and PostgreSQL, reducing latency by 80% and saving us thousands in server costs.",
     author: "Elena Rostova",
-    role: "VP of Engineering",
-    company: "Vanguard Retail SaaS",
+    role: "VP of Product",
+    company: "Vanguard SaaS",
     stars: 5,
     avatar: "ER"
   }

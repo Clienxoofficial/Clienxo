@@ -7,30 +7,30 @@ export default function Features() {
       <div className="section-container">
         <div className="section-header">
           <span className="section-mini-title">FEATURES</span>
-          <h2 className="section-title uppercase">Excellence Redefined: Unleashing Tailored Solutions for Your Success Journey</h2>
+          <h2 className="section-title uppercase">Built for Speed, Engineered for Scale</h2>
           <div className="header-bar"></div>
         </div>
 
         <div className="features-grid-four">
           <div className="feature-card-bordered">
             <div className="feature-icon-wrapper"><Sparkles size={20} /></div>
-            <h4>Deliver On Time</h4>
-            <p>Timely delivery is where high-performance engineering meets precise agile execution.</p>
+            <h4>Rapid Shipping</h4>
+            <p>We build and ship MVPs and features in weekly sprints, keeping you ahead of the market.</p>
           </div>
           <div className="feature-card-bordered">
             <div className="feature-icon-wrapper"><Shield size={20} /></div>
-            <h4>Security</h4>
-            <p>Every database, API gateway, and cloud infrastructure endpoint is secured with military-grade encryption.</p>
+            <h4>Zero-Trust Security</h4>
+            <p>Your product is secured from day one with modern authorization, secure APIs, and encrypted databases.</p>
           </div>
           <div className="feature-card-bordered">
             <div className="feature-icon-wrapper"><Zap size={20} /></div>
-            <h4>Flexibility</h4>
-            <p>Easily scale your server compute power, database configurations, and UI design modules on the go.</p>
+            <h4>Infinite Scalability</h4>
+            <p>Cloud infrastructures built with Kubernetes and serverless frameworks that auto-scale as you grow.</p>
           </div>
           <div className="feature-card-bordered">
             <div className="feature-icon-wrapper"><Briefcase size={20} /></div>
-            <h4>Driving</h4>
-            <p>Leading technology stacks engineered specifically to drive business growth and user engagement.</p>
+            <h4>Modern Tech Stack</h4>
+            <p>No legacy tech. We build clean codebases using Next.js, Node.js, FastAPI, and Docker.</p>
           </div>
         </div>
       </div>

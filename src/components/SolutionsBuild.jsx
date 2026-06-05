@@ -73,8 +73,8 @@ export default function SolutionsBuild() {
     <section id="solutions-build" className="solutions-build-section fade-in-section">
       <div className="section-container">
         <div className="section-header">
-          <span className="section-mini-title">ENTERPRISE SOLUTIONS</span>
-          <h2 className="section-title uppercase">Solutions We Build</h2>
+          <span className="section-mini-title">WHAT WE BUILD</span>
+          <h2 className="section-title uppercase">Digital Products & Solutions</h2>
           <div className="header-bar"></div>
         </div>
 
