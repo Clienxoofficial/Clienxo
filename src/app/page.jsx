@@ -9,45 +9,32 @@ import About from '../components/About';
 import Stats from '../components/Stats';
 import Features from '../components/Features';
 import Services from '../components/Services';
-import Estimator from '../components/Estimator';
-import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
 import ServiceDetailModal from '../components/ServiceDetailModal';
 import ContactPage from '../components/ContactPage';
 
 // New Section Imports
-import Expertise from '../components/Expertise';
-import TechEcosystem from '../components/TechEcosystem';
 import SolutionsBuild from '../components/SolutionsBuild';
 import ProcessTimeline from '../components/ProcessTimeline';
 import WhyChooseUs from '../components/WhyChooseUs';
-import Industries from '../components/Industries';
 import FaqAccordion from '../components/FaqAccordion';
+import WhatWeDoPage from '../components/WhatWeDoPage';
 
 export default function Home() {
   // Navigation & Theme
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(() => {
-    try {
-      if (typeof window !== 'undefined') {
-        const localTheme = localStorage.getItem('theme');
-        if (localTheme) return localTheme;
-        if (window.matchMedia) {
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          return prefersDark ? 'dark' : 'light';
-        }
-      }
-    } catch (e) {
-      console.warn("Theme query failed", e);
-    }
-    return 'dark';
-  });
+  const [theme, setTheme] = useState('dark');
+  const [mounted, setMounted] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
   // Shared States
   const [selectedService, setSelectedService] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isWhatWeDoOpen, setIsWhatWeDoOpen] = useState(false);
+
+  const openWhatWeDo = () => setIsWhatWeDoOpen(true);
+  const closeWhatWeDo = () => setIsWhatWeDoOpen(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -75,9 +62,27 @@ export default function Home() {
 
   // Setup Theme on Mount & Update
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+    setMounted(true);
+    const localTheme = localStorage.getItem('theme');
+    if (localTheme) {
+      setTheme(localTheme);
+    } else if (window.matchMedia) {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(prefersDark ? 'dark' : 'light');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      localStorage.setItem('theme', theme);
+    }
+  }, [theme, mounted]);
 
   // Handle header background on scroll
   useEffect(() => {
@@ -97,7 +102,7 @@ export default function Home() {
       return;
     }
 
-    const sections = ['home', 'about', 'services', 'process', 'estimator', 'testimonials', 'why-choose-us', 'expertise', 'tech-ecosystem', 'solutions-build', 'process-timeline', 'industries', 'faq'];
+    const sections = ['home', 'about', 'services', 'process', 'why-choose-us', 'solutions-build', 'process-timeline', 'faq'];
 
     const observerOptions = {
       root: null,
@@ -145,20 +150,13 @@ export default function Home() {
 
   const handleScrollTo = (id) => {
     setIsMenuOpen(false);
-    // 'contact' now opens the modal instead of scrolling
     if (id === 'contact') {
       openContact();
       return;
     }
     const element = document.getElementById(id);
     if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -180,11 +178,13 @@ export default function Home() {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
         openContact={openContact}
+        mounted={mounted}
       />
 
       <Hero handleScrollTo={handleScrollTo} openContact={openContact} />
 
-      <About handleScrollTo={handleScrollTo} openContact={openContact} />
+      <div style={{ position: 'relative', zIndex: 20, backgroundColor: 'var(--bg-primary)' }}>
+        <About handleScrollTo={handleScrollTo} openContact={openContact} />
 
       <Stats />
 
@@ -193,24 +193,14 @@ export default function Home() {
       <WhyChooseUs />
 
       <Services handleScrollTo={handleScrollTo} setSelectedService={setSelectedService} openContact={openContact} />
-
-      <Expertise />
-
-      <TechEcosystem />
-
-      <SolutionsBuild />
+      <SolutionsBuild openWhatWeDo={openWhatWeDo} />
 
       <ProcessTimeline />
 
-      <Industries />
-
-      <Estimator handleScrollTo={handleScrollTo} setFormData={setFormData} openContact={openContact} />
-
-      <Testimonials />
-
       <FaqAccordion />
 
-      <Footer handleScrollTo={handleScrollTo} openContact={openContact} />
+        <Footer handleScrollTo={handleScrollTo} openContact={openContact} />
+      </div>
 
       <ServiceDetailModal
         selectedService={selectedService}
@@ -224,6 +214,11 @@ export default function Home() {
         onClose={closeContact}
         formData={formData}
         setFormData={setFormData}
+      />
+
+      <WhatWeDoPage
+        isOpen={isWhatWeDoOpen}
+        onClose={closeWhatWeDo}
       />
     </>
   );

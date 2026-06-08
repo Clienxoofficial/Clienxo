@@ -31,6 +31,9 @@
   --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(79, 70, 229, 0.1);
   
   --input-bg: #ffffff;
+
+  --robot-bg-start: #f8fafc;
+  --robot-bg-end: #f1f5f9;
   
   /* Scroll behavior */
   scroll-behavior: smooth;
@@ -49,13 +52,13 @@ html.dark,
   --text-secondary: #a1a1aa;
   --text-muted: #71717a;
   
-  --accent-primary: #ffffff;      /* Tech White Accent */
-  --accent-primary-hover: #e4e4e7;
-  --accent-primary-rgb: 255, 255, 255;
+  --accent-primary: #6366f1;      /* Tech Violet/Indigo Accent */
+  --accent-primary-hover: #4f46e5;
+  --accent-primary-rgb: 99, 102, 241;
   
-  --accent-secondary: #27272a;    /* Dark Metallic Zinc */
-  --accent-secondary-hover: #3f3f46;
-  --accent-secondary-rgb: 39, 39, 42;
+  --accent-secondary: #06b6d4;    /* Vibrant Cyan Accent */
+  --accent-secondary-hover: #0891b2;
+  --accent-secondary-rgb: 6, 182, 212;
   
   --border-color: rgba(255, 255, 255, 0.08);
   --border-color-hover: rgba(255, 255, 255, 0.15);
@@ -66,6 +69,9 @@ html.dark,
   --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
   
   --input-bg: #0d0d0f;
+
+  --robot-bg-start: #0a0b14;
+  --robot-bg-end: #060710;
 }
 
 /* Global Reset & Base Styles */
@@ -130,9 +136,9 @@ a {
 /* Reveal on Scroll animations classes */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(40px);
   visibility: hidden;
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 

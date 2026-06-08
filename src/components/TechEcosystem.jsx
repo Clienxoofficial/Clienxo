@@ -6,36 +6,26 @@ const ECOSYSTEM_DATA = [
   {
     category: 'Frontend',
     icon: <Layout size={20} />,
-    color: 'rgba(99, 102, 241, 0.15)',
-    glow: 'rgba(99, 102, 241, 0.4)',
     techs: ['React.js', 'Next.js', 'JavaScript', 'HTML', 'CSS']
   },
   {
     category: 'Backend',
     icon: <Server size={20} />,
-    color: 'rgba(168, 85, 247, 0.15)',
-    glow: 'rgba(168, 85, 247, 0.4)',
     techs: ['Node.js', 'Express.js', 'Python']
   },
   {
     category: 'Database',
     icon: <Database size={20} />,
-    color: 'rgba(236, 72, 153, 0.15)',
-    glow: 'rgba(236, 72, 153, 0.4)',
     techs: ['MySQL', 'PostgreSQL', 'MongoDB']
   },
   {
     category: 'AI & Automation',
     icon: <Cpu size={20} />,
-    color: 'rgba(245, 158, 11, 0.15)',
-    glow: 'rgba(245, 158, 11, 0.4)',
     techs: ['OpenAI', 'AI Agents', 'Workflow Automation']
   },
   {
     category: 'Cloud & Deployment',
     icon: <Cloud size={20} />,
-    color: 'rgba(6, 182, 212, 0.15)',
-    glow: 'rgba(6, 182, 212, 0.4)',
     techs: ['Vercel', 'Netlify', 'AWS']
   }
 ];
@@ -52,21 +42,20 @@ export default function TechEcosystem() {
 
         <div className="ecosystem-grid-five">
           {ECOSYSTEM_DATA.map((cat, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="ecosystem-cat-card glass-card"
-              style={{ '--cat-glow': cat.glow }}
             >
               <div className="ecosystem-cat-header">
-                <div className="ecosystem-cat-icon-box" style={{ backgroundColor: cat.color }}>
+                <div className="ecosystem-cat-icon-box">
                   {cat.icon}
                 </div>
                 <h3>{cat.category}</h3>
               </div>
               <div className="ecosystem-tech-list">
                 {cat.techs.map((tech, tIdx) => (
-                  <div 
-                    key={tIdx} 
+                  <div
+                    key={tIdx}
                     className="ecosystem-tech-item float-item"
                     style={{ animationDelay: `${(idx * 2 + tIdx) * 0.1}s` }}
                   >

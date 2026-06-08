@@ -25,8 +25,8 @@ export default function About({ handleScrollTo, openContact }) {
                 <defs>
                   {/* Gradients */}
                   <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#0a0b14"/>
-                    <stop offset="100%" stopColor="#060710"/>
+                    <stop offset="0%" stopColor="var(--robot-bg-start)"/>
+                    <stop offset="100%" stopColor="var(--robot-bg-end)"/>
                   </linearGradient>
                   <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#1e2040"/>

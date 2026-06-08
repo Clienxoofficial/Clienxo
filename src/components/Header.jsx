@@ -9,7 +9,8 @@ export default function Header({
   handleToggleTheme,
   isMenuOpen,
   setIsMenuOpen,
-  openContact
+  openContact,
+  mounted
 }) {
   return (
     <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
@@ -27,7 +28,13 @@ export default function Header({
 
         <div className="navbar-actions">
           <button className="theme-toggle" onClick={handleToggleTheme} aria-label="Toggle theme">
-            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            {!mounted ? (
+              <div style={{ width: 20, height: 20 }} />
+            ) : theme === 'light' ? (
+              <Moon size={20} />
+            ) : (
+              <Sun size={20} />
+            )}
           </button>
 
           <button className="cta-quote-btn outline-cta" onClick={openContact}>

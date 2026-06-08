@@ -1,9 +1,38 @@
 "use client";
+import { useState, useEffect } from 'react';
 import { Sparkles, ArrowRight } from 'lucide-react';
 
 export default function Hero({ handleScrollTo, openContact }) {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    let animationFrameId;
+    const handleScroll = () => {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      animationFrameId = requestAnimationFrame(() => {
+        setScrollY(window.scrollY);
+      });
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  // Parallax slide down effect instead of 3D flip
+  const translateY = scrollY * 0.4;
+  const opacity = Math.max(1 - scrollY / 700, 0); 
+  const scale = Math.max(1 - scrollY / 1200, 0.9);
+  
+  const heroStyle = {
+    transform: `translateY(${translateY}px) scale(${scale})`,
+    opacity: opacity,
+    transformOrigin: 'center center',
+  };
+
   return (
-    <section id="home" className="hero-section-premium">
+    <section id="home" className="hero-section-premium" style={{ perspective: '1200px' }}>
       {/* Background ambient elements */}
       <div className="space-ambient-glow"></div>
       <div className="spotlight-overlay"></div>
@@ -15,7 +44,7 @@ export default function Hero({ handleScrollTo, openContact }) {
         <div className="particle p4"></div>
       </div>
 
-      <div className="hero-container-split">
+      <div className="hero-container-split" style={heroStyle}>
         {/* Left Side: Enterprise Typography and Stats */}
         <div className="hero-left-col fade-in-section is-visible">
           <div className="hero-badge-premium">

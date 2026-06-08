@@ -10,7 +10,7 @@ export default function Services({ handleScrollTo, setSelectedService, openConta
           <span className="section-mini-title">OUR SERVICES</span>
           <h2 className="section-title uppercase">Growth Services For Modern Startups</h2>
           <div className="header-bar"></div>
-          <p className="section-desc-subtitle">
+          <p className="section-subtitle">
             We build high-performance software, integrate intelligent AI automations, and design seamless user experiences to accelerate your launch.
           </p>
         </div>
