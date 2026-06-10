@@ -60,11 +60,11 @@ export default function FaqAccordion() {
               >
                 <div className="faq-accordion-header">
                   <div className="faq-question-box">
-                    <HelpCircle size={18} className="faq-question-icon" />
+                    <HelpCircle size={16} className="faq-question-icon" />
                     <h3>{item.question}</h3>
                   </div>
                   <button className="faq-toggle-btn" aria-label="Toggle answer">
-                    {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                    {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                   </button>
                 </div>
                 <div className="faq-accordion-content">
