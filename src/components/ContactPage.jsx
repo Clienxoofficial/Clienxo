@@ -266,7 +266,7 @@ export default function ContactPage({ isOpen, onClose, formData, setFormData }) 
                 <div className="cp-field">
                   <label htmlFor="cpf-msg">Your Message *</label>
                   <textarea
-                    id="cpf-msg" rows="5"
+                    id="cpf-msg" rows="3"
                     placeholder="Describe your project, goals, timeline..."
                     className={formErrors.message ? 'cp-field--err' : ''}
                     value={formData.message}

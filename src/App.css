@@ -4993,7 +4993,7 @@ section {
   display: flex; 
   align-items: center; 
   justify-content: space-between;
-  padding: 20px 48px;
+  padding: 12px 24px;
   background: rgba(8, 8, 10, 0.6); 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -5051,7 +5051,7 @@ section {
   max-width: 860px; 
   width: 100%; 
   margin: 0 auto;
-  padding: 40px 24px 80px; 
+  padding: 16px 24px 32px; 
   position: relative; 
   z-index: 1;
   opacity: 0; 
@@ -5063,29 +5063,29 @@ section {
 /* ── Hero Heading ── */
 .cp-hero { 
   text-align: center; 
-  margin-bottom: 32px; 
+  margin-bottom: 16px; 
 }
 .cp-hero__eyebrow {
   display: inline-block;
-  font-size: 11px; 
+  font-size: 10px; 
   font-weight: 800; 
   letter-spacing: 2px;
   color: #818cf8; 
   text-transform: uppercase; 
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   background: rgba(99, 102, 241, 0.1);
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 20px;
   border: 1px solid rgba(99, 102, 241, 0.15);
   box-shadow: 0 4px 10px rgba(99, 102, 241, 0.05);
 }
 .cp-hero__title {
   font-family: var(--font-heading); 
-  font-size: clamp(28px, 4.5vw, 42px);
+  font-size: clamp(22px, 3.5vw, 32px);
   font-weight: 800; 
   line-height: 1.15; 
   color: #fff; 
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   letter-spacing: -0.5px;
 }
 .cp-hero__title .text-gradient {
@@ -5095,9 +5095,9 @@ section {
   background-clip: text;
 }
 .cp-hero__sub {
-  font-size: 14px; 
+  font-size: 13px; 
   color: #a1a1aa; 
-  line-height: 1.6;
+  line-height: 1.5;
   max-width: 480px; 
   margin: 0 auto;
 }
@@ -5122,7 +5122,7 @@ section {
 
 /* ── Columns ── */
 .cp-contacts-col { 
-  padding: 36px 30px; 
+  padding: 24px 20px; 
   background: rgba(8, 8, 10, 0.35); 
 }
 .cp-col-label {
@@ -5134,7 +5134,7 @@ section {
   letter-spacing: 1.5px;
   text-transform: uppercase; 
   color: #71717a; 
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 .cp-col-label svg {
   color: #6366f1;
@@ -5145,7 +5145,7 @@ section {
   display: flex; 
   flex-direction: column; 
   gap: 12px; 
-  margin-bottom: 30px; 
+  margin-bottom: 18px; 
 }
 .cp-contact-card {
   display: flex; 
@@ -5313,7 +5313,7 @@ section {
   flex-direction: column; 
   align-items: center; 
   justify-content: center;
-  padding: 30px 0; 
+  padding: 10px 0; 
   gap: 12px;
   border-left: 1px solid rgba(255, 255, 255, 0.05); 
   border-right: 1px solid rgba(255, 255, 255, 0.05);
@@ -5337,7 +5337,7 @@ section {
 
 /* ── Form Column ── */
 .cp-form-col { 
-  padding: 36px 36px; 
+  padding: 24px 24px; 
   background: rgba(13, 13, 17, 0.25); 
 }
 
@@ -5378,7 +5378,7 @@ section {
   background: rgba(8, 8, 10, 0.6); 
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 10px; 
-  padding: 10px 14px; 
+  padding: 7px 12px; 
   color: #fff;
   font-family: var(--font-body); 
   font-size: 13.5px; 
@@ -5389,7 +5389,7 @@ section {
 }
 .cp-field textarea { 
   resize: none; 
-  min-height: 100px; 
+  min-height: 52px; 
 }
 
 .cp-field input::placeholder,
@@ -5581,28 +5581,136 @@ section {
 
 /* ── Responsiveness ── */
 @media (max-width: 960px) {
-  .cp-grid { grid-template-columns: 1fr; }
-  .cp-divider { 
-    flex-direction: row; 
-    padding: 24px 35px; 
-    border-left: none; 
-    border-right: none; 
-    border-top: 1px solid rgba(255, 255, 255, 0.05); 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
-    width: 100%;
-    height: auto;
+  .cp-grid { 
+    grid-template-columns: 1fr; 
+    border-radius: 16px;
   }
-  .cp-divider__line { height: 1px; width: auto; flex: 1; }
-  .cp-divider__text { padding: 0 10px; }
-  .cp-contacts-col, .cp-form-col { padding: 30px 24px; }
-  .cp-header { padding: 14px 20px; }
-  .cp-main { padding: 24px 16px 50px; }
-  .cp-submit { width: 100%; align-self: stretch; }
+  .cp-divider { 
+    display: none !important; /* Hide divider on mobile view to save space */
+  }
+  .cp-contacts-col { 
+    padding: 12px 16px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .cp-col-label {
+    margin-bottom: 8px;
+    font-size: 10px;
+  }
+  .cp-contact-cards {
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+  .cp-contact-card {
+    flex: 1;
+    padding: 6px 8px;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+  }
+  .cp-contact-card__icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+  }
+  .cp-contact-card__icon svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+  .cp-contact-card__body {
+    gap: 0px;
+  }
+  .cp-contact-card__tag {
+    font-size: 7.5px;
+    letter-spacing: 0.8px;
+  }
+  .cp-contact-card__val {
+    font-size: 11px;
+  }
+  .cp-contact-card__desc,
+  .cp-contact-card__ext {
+    display: none !important; /* Hide description & external arrow to fit in row */
+  }
+  .cp-trust {
+    display: none !important; /* Hide trust checklist on mobile view to fit screen */
+  }
+  .cp-form-col { 
+    padding: 16px 16px; 
+  }
+  .cp-header { 
+    padding: 8px 16px; 
+  }
+  .cp-main { 
+    padding: 10px 10px 16px; 
+  }
+  .cp-submit { 
+    width: 100%; 
+    align-self: stretch; 
+    padding: 6px 12px;
+  }
 }
 @media (max-width: 580px) {
-  .cp-form-row { grid-template-columns: 1fr; }
-  .cp-hero__title { font-size: 32px; }
+  .cp-form-row { grid-template-columns: 1fr; gap: 8px; }
+  .cp-hero__title { font-size: 20px; }
   .cp-header__brand, .cp-header__spacer { display: none; }
+}
+
+@media (max-height: 750px) {
+  .cp-main {
+    padding: 8px 16px 16px;
+  }
+  .cp-hero {
+    margin-bottom: 8px;
+  }
+  .cp-hero__eyebrow {
+    margin-bottom: 2px;
+  }
+  .cp-hero__title {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+  .cp-hero__sub {
+    font-size: 12px;
+  }
+  .cp-contacts-col {
+    padding: 12px 16px;
+  }
+  .cp-col-label {
+    margin-bottom: 8px;
+  }
+  .cp-contact-cards {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .cp-contact-card {
+    padding: 6px 8px;
+  }
+  .cp-contact-card__desc {
+    display: none !important;
+  }
+  .cp-trust {
+    display: none !important;
+  }
+  .cp-divider {
+    padding: 5px 0;
+  }
+  .cp-form-col {
+    padding: 12px 16px;
+  }
+  .cp-form {
+    gap: 8px;
+  }
+  .cp-field {
+    gap: 2px;
+  }
+  .cp-field input,
+  .cp-field select,
+  .cp-field textarea {
+    padding: 6px 10px;
+  }
+  .cp-field textarea {
+    min-height: 48px;
+  }
 }
 
 /* ==========================================
