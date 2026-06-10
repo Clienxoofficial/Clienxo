@@ -49,7 +49,7 @@ export default function Hero({ handleScrollTo, openContact }) {
         <div className="hero-left-col fade-in-section is-visible">
           <div className="hero-badge-premium">
             <span className="badge-glow-dot"></span>
-            AI Powered Software Development Company
+            Building AI-Powered Software That Grows Your Business
           </div>
           
           <h1 className="hero-title-premium">
