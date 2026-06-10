@@ -1583,7 +1583,7 @@ section {
 .footer-section {
   background-color: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
-  padding: 80px 24px 0;
+  padding: 80px 0 0;
   text-align: left;
 }
 
@@ -1595,6 +1595,8 @@ section {
   gap: 48px;
   padding-bottom: 48px;
   border-bottom: 1px solid var(--border-color);
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .footer-brand p {
@@ -4619,7 +4621,7 @@ section {
 .footer-section {
   background-color: var(--bg-primary);
   border-top: 1px solid var(--border-color);
-  padding: 80px 24px 0;
+  padding: 80px 0 0;
 }
 
 .footer-container {
@@ -4629,6 +4631,8 @@ section {
   grid-template-columns: 1fr 2.5fr;
   gap: 64px;
   padding-bottom: 64px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .footer-brand-col p {
@@ -9650,5 +9654,24 @@ html, body, #root {
   .solutions-explore-btn {
     width: 100%;
     justify-content: center;
+  }
+  
+  /* Footer responsive spacing and gap fix */
+  .footer-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .footer-bottom-bar {
+    padding: 24px 16px !important;
+  }
+  .footer-bottom-container-flex {
+    flex-direction: column !important;
+    gap: 16px !important;
+    text-align: center !important;
+  }
+  .footer-legal-links {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
   }
 }
