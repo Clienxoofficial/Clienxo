@@ -59,7 +59,7 @@ export default function Hero({ handleScrollTo, openContact }) {
           </h1>
 
           <p className="hero-subtitle-premium">
-            We build scalable web applications, AI solutions, mobile apps and enterprise software that help businesses grow faster and smarter.
+            We help startups and businesses automate workflows, reduce operational costs, and accelerate growth through AI-powered solutions, custom software, and modern web applications.
           </p>
 
           <div className="hero-ctas-premium">
@@ -74,23 +74,23 @@ export default function Hero({ handleScrollTo, openContact }) {
           {/* Statistics Row */}
           <div className="hero-stats-row">
             <div className="stat-item">
-              <span className="num text-gradient-neon">10</span>
-              <span className="label">Completed Works</span>
+              <span className="num text-gradient-neon">25+</span>
+              <span className="label">Projects Delivered</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="num text-gradient-neon">15+</span>
+              <span className="label">AI Solutions Built</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="num text-gradient-neon">10,000+</span>
+              <span className="label">Hours Saved Through Automation</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
               <span className="num text-gradient-neon">100%</span>
               <span className="label">Client Satisfaction</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <span className="num text-gradient-neon">4</span>
-              <span className="label">Dedicated Devs</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <span className="num text-gradient-neon">3+ Yrs</span>
-              <span className="label">Experience Each</span>
             </div>
           </div>
         </div>

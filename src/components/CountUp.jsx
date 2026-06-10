@@ -28,20 +28,25 @@ export default function CountUp({ end, suffix = "", duration = 1500 }) {
   useEffect(() => {
     if (!hasStarted) return;
 
-    let start = 0;
-    const stepTime = Math.abs(Math.floor(duration / end)) || 10;
+    let startTime = null;
+    let frameId;
 
-    const timer = setInterval(() => {
-      start += 1;
-      setCount(start);
-      if (start >= end) {
-        clearInterval(timer);
-        setCount(end);
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const progressPercentage = Math.min(progress / duration, 1);
+      
+      const currentVal = Math.floor(progressPercentage * end);
+      setCount(currentVal);
+
+      if (progressPercentage < 1) {
+        frameId = requestAnimationFrame(animate);
       }
-    }, stepTime);
-
-    return () => clearInterval(timer);
+    };
+    
+    frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
   }, [end, duration, hasStarted]);
 
-  return <span ref={countRef}>{count}{suffix}</span>;
+  return <span ref={countRef}>{count.toLocaleString()}{suffix}</span>;
 }
