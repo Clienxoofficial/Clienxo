@@ -2658,36 +2658,44 @@ section {
 .hero-stats-row {
   display: flex;
   align-items: center;
-  gap: 24px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: clamp(8px, 1.5vw, 24px);
   width: 100%;
 }
 
 .stat-item {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  min-width: 0;
   gap: 4px;
 }
 
 .stat-item .num {
   font-family: var(--font-heading);
-  font-size: 28px;
+  font-size: clamp(18px, 2.5vw, 28px);
   font-weight: 800;
   line-height: 1;
 }
 
 .stat-item .label {
-  font-size: 11px;
+  font-size: clamp(8.5px, 1.1vw, 11px);
   color: #71717a;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.25;
 }
 
 .stat-divider {
   width: 1px;
   height: 32px;
   background-color: rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
 }
 
 /* Right Column: AI Scene */
@@ -9569,7 +9577,7 @@ html, body, #root {
 
 /* Fluid Paddings & Margins */
 .section-container {
-  padding: clamp(32px, 4vw, 56px) clamp(16px, 3vw, 24px) !important;
+  padding: clamp(20px, 2.5vw, 36px) clamp(16px, 3vw, 24px) !important;
 }
 .hero-section-premium {
   padding: clamp(64px, 8vw, 100px) clamp(16px, 3vw, 24px) clamp(32px, 6vw, 56px) !important;
@@ -9640,9 +9648,9 @@ html, body, #root {
 
 .hero-stats-row {
   display: flex !important;
-  flex-wrap: wrap !important;
-  gap: clamp(16px, 2vw, 24px) !important;
-  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  gap: clamp(8px, 1.5vw, 24px) !important;
+  justify-content: space-between !important;
 }
 
 /* ==========================================
@@ -9666,9 +9674,9 @@ html, body, #root {
     font-size: 32px !important;
   }
   .hero-stats-row {
-    flex-wrap: wrap !important;
-    gap: 16px !important;
-    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    justify-content: space-between !important;
   }
   .stat-divider {
     display: none !important;
