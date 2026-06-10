@@ -12,6 +12,7 @@ import Services from '../components/Services';
 import Footer from '../components/Footer';
 import ServiceDetailModal from '../components/ServiceDetailModal';
 import ContactPage from '../components/ContactPage';
+import Portfolio from '../components/Portfolio';
 
 // New Section Imports
 import SolutionsBuild from '../components/SolutionsBuild';
@@ -102,7 +103,7 @@ export default function Home() {
       return;
     }
 
-    const sections = ['home', 'about', 'services', 'process', 'why-choose-us', 'solutions-build', 'process-timeline', 'faq'];
+    const sections = ['home', 'about', 'services', 'portfolio', 'why-choose-us', 'solutions-build', 'process-timeline', 'faq'];
 
     const observerOptions = {
       root: null,
@@ -193,6 +194,7 @@ export default function Home() {
       <WhyChooseUs />
 
       <Services handleScrollTo={handleScrollTo} setSelectedService={setSelectedService} openContact={openContact} />
+      <Portfolio handleScrollTo={handleScrollTo} setFormData={setFormData} openContact={openContact} />
       <SolutionsBuild openWhatWeDo={openWhatWeDo} />
 
       <ProcessTimeline />

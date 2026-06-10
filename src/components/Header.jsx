@@ -21,9 +21,11 @@ export default function Header({
         </div>
 
         <nav className="desktop-nav">
-          <button className={`nav-link ${activeSection === 'home' ? 'active' : ''}`} onClick={() => handleScrollTo('home')}>Platform</button>
+          <button className={`nav-link ${activeSection === 'home' ? 'active' : ''}`} onClick={() => handleScrollTo('home')}>Home</button>
           <button className={`nav-link ${activeSection === 'services' ? 'active' : ''}`} onClick={() => handleScrollTo('services')}>Services</button>
-          <button className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} onClick={openContact}>Contact Us</button>
+          <button className={`nav-link ${activeSection === 'portfolio' ? 'active' : ''}`} onClick={() => handleScrollTo('portfolio')}>Portfolio</button>
+          <button className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} onClick={() => handleScrollTo('about')}>About</button>
+          <button className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} onClick={openContact}>Contact</button>
         </nav>
 
         <div className="navbar-actions">
@@ -50,9 +52,11 @@ export default function Header({
       {/* Mobile Navigation Drawer */}
       {isMenuOpen && (
         <div className="mobile-nav-drawer">
-          <button onClick={() => handleScrollTo('home')}>Platform</button>
+          <button onClick={() => handleScrollTo('home')}>Home</button>
           <button onClick={() => handleScrollTo('services')}>Services</button>
-          <button onClick={() => { setIsMenuOpen(false); openContact(); }}>Contact Us</button>
+          <button onClick={() => handleScrollTo('portfolio')}>Portfolio</button>
+          <button onClick={() => handleScrollTo('about')}>About</button>
+          <button onClick={() => { setIsMenuOpen(false); openContact(); }}>Contact</button>
           <button className="mobile-cta-btn" onClick={() => { setIsMenuOpen(false); openContact(); }}>Get Free Quote</button>
         </div>
       )}
