@@ -9665,7 +9665,7 @@ html, body, #root {
     padding-right: 16px !important;
   }
   .footer-bottom-bar {
-    padding: 24px 16px !important;
+    padding: 24px 16px calc(24px + env(safe-area-inset-bottom)) !important;
   }
   .footer-bottom-container-flex {
     flex-direction: column !important;
