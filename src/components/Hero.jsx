@@ -53,9 +53,9 @@ export default function Hero({ handleScrollTo, openContact }) {
           </div>
           
           <h1 className="hero-title-premium">
-            Engineering <br />
-            The Future With <br />
-            <span className="text-gradient-neon">AI & Software Innovation</span>
+            AI Automation & <br />
+            Software Solutions <br />
+            <span className="text-gradient-neon">That Scale Your Business</span>
           </h1>
 
           <p className="hero-subtitle-premium">
