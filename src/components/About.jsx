@@ -337,9 +337,7 @@ export default function About({ handleScrollTo, openContact }) {
                 <span>Comprehensive post-deployment security updates</span>
               </div>
             </div>
-            <button className="btn-secondary-outline mt-6 flex-center" onClick={openContact}>
-              Read Story <ChevronRight size={16} className="rotate-90" />
-            </button>
+
           </div>
         </div>
       </div>
