@@ -316,8 +316,11 @@ export default function About({ handleScrollTo, openContact }) {
 
           <div className="about-text-content">
             <h3>Accelerating Innovation: Building the Next Generation of Software.</h3>
-            <p>
-              At Clienxo, we don&apos;t believe in generic templates or standard cut-and-paste software. We believe that custom businesses deserve tailored technological solutions. Every database we optimize, every UI detail we animate, and every API server we launch is hand-crafted to achieve maximum efficiency.
+            <p className="about-p">
+              At Clienxo, we don&apos;t believe in generic templates or standard cut-and-paste software. We believe that custom businesses deserve tailored technological solutions.
+            </p>
+            <p className="about-p">
+              Every database we optimize, every UI detail we animate, and every API server we launch is hand-crafted to achieve maximum efficiency.
             </p>
             <div className="about-check-list">
               <div className="check-item">

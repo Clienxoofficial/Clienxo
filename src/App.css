@@ -55,6 +55,13 @@
   background-clip: text;
 }
 
+.show-on-mobile {
+  display: none;
+}
+.hide-on-mobile {
+  display: block;
+}
+
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -2663,6 +2670,8 @@ section {
   justify-content: space-between;
   gap: clamp(8px, 1.5vw, 24px);
   width: 100%;
+  grid-column: 1 / -1;
+  margin-top: 32px;
 }
 
 .stat-item {
@@ -9658,6 +9667,13 @@ html, body, #root {
    MOBILE LAYOUT COMPACTION ALIGNMENT FIXES
    ========================================== */
 @media (max-width: 768px) {
+  .show-on-mobile {
+    display: block !important;
+  }
+  .hide-on-mobile {
+    display: none !important;
+  }
+
   /* Global section container */
   .section-container {
     padding: 40px 16px !important;
@@ -9666,21 +9682,67 @@ html, body, #root {
   /* Hero Section compactness */
   .hero-section-premium {
     padding: 100px 16px 40px !important;
-    min-height: 100vh !important;
+    min-height: auto !important;
   }
   .hero-container-split {
+    display: flex !important;
+    flex-direction: column !important;
     gap: 24px !important;
   }
   .hero-title-premium {
-    font-size: 32px !important;
+    font-size: clamp(24px, 7vw, 32px) !important;
+    line-height: 1.25 !important;
   }
   .hero-stats-row {
-    flex-wrap: nowrap !important;
-    gap: 6px !important;
-    justify-content: space-between !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 20px !important;
+    width: 100% !important;
+    margin-top: 24px !important;
+  }
+  .stat-item {
+    flex: none !important;
+    width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .stat-item .num {
+    font-size: 26px !important;
+  }
+  .stat-item .label {
+    font-size: 11px !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
   }
   .stat-divider {
     display: none !important;
+  }
+
+  /* About Section Compact Robot SVG & Split Paragraphs spacing */
+  .robot-scene-wrapper {
+    min-height: 300px !important;
+  }
+  .robot-svg {
+    max-height: 360px !important;
+    max-width: 80% !important;
+    margin: 0 auto !important;
+  }
+  .about-text-content .about-p {
+    margin-bottom: 12px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Features Cards Tap effects for mobile screens */
+  .feature-card-bordered {
+    border-color: rgba(99, 102, 241, 0.15) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(99, 102, 241, 0.04) !important;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  }
+  .feature-card-bordered:active {
+    transform: scale(0.97) !important;
+    border-color: var(--accent-primary, #6366f1) !important;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25) !important;
+    background-color: var(--bg-secondary) !important;
   }
   
   /* Titles and Headers */

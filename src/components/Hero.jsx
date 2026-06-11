@@ -52,10 +52,14 @@ export default function Hero({ handleScrollTo, openContact }) {
             Building AI-Powered Software That Grows Your Business
           </div>
           
-          <h1 className="hero-title-premium">
+          <h1 className="hero-title-premium hide-on-mobile">
             Custom Software & <br />
             AI Solutions for <br />
             <span className="text-gradient-neon">Startups and Growing Businesses</span>
+          </h1>
+          <h1 className="hero-title-premium show-on-mobile">
+            AI & Custom Software <br />
+            <span className="text-gradient-neon">For Growing Businesses</span>
           </h1>
 
           <p className="hero-subtitle-premium">
@@ -70,28 +74,28 @@ export default function Hero({ handleScrollTo, openContact }) {
               View Services
             </button>
           </div>
+        </div>
 
-          {/* Statistics Row */}
-          <div className="hero-stats-row">
-            <div className="stat-item">
-              <span className="num text-gradient-neon">25+</span>
-              <span className="label">Projects Delivered</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <span className="num text-gradient-neon">15+</span>
-              <span className="label">AI Solutions Built</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <span className="num text-gradient-neon">10,000+</span>
-              <span className="label">Hours Saved Through Automation</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <span className="num text-gradient-neon">100%</span>
-              <span className="label">Client Satisfaction</span>
-            </div>
+        {/* Statistics Row (positioned outside left column to stack at the bottom on mobile) */}
+        <div className="hero-stats-row">
+          <div className="stat-item">
+            <span className="num text-gradient-neon">25+</span>
+            <span className="label">Projects Delivered</span>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item">
+            <span className="num text-gradient-neon">15+</span>
+            <span className="label">AI Solutions Built</span>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item">
+            <span className="num text-gradient-neon">10,000+</span>
+            <span className="label">Hours Saved Through Automation</span>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item">
+            <span className="num text-gradient-neon">100%</span>
+            <span className="label">Client Satisfaction</span>
           </div>
         </div>
 
