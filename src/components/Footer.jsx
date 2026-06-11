@@ -26,35 +26,11 @@ export default function Footer({ handleScrollTo, openContact }) {
 
           <div className="footer-links-columns">
             <div className="footer-col">
-              <h4>About Us</h4>
-              <button onClick={() => handleScrollTo('about')}>Our Story</button>
-              <button onClick={() => handleScrollTo('testimonials')}>Client Reviews</button>
-              <a href="#careers">Careers</a>
-              <a href="#blog">Press Kit</a>
-            </div>
-
-            <div className="footer-col">
-              <h4>Services</h4>
-              <button onClick={() => handleScrollTo('services')}>Core Capabilities</button>
-              <button onClick={() => handleScrollTo('estimator')}>Interactive Pricing</button>
-              <a href="#sla">Uptime SLA</a>
-              <a href="#consulting">IT Auditing</a>
-            </div>
-
-            <div className="footer-col">
-              <h4>Solutions</h4>
-              <button onClick={() => handleScrollTo('services')}>Core Services</button>
-              <a href="#saas">Enterprise SaaS</a>
-              <a href="#custom">Custom Databases</a>
-              <a href="#cloud">Cloud Migrations</a>
-            </div>
-
-            <div className="footer-col">
-              <h4>Resources</h4>
-              <a href="#docs">API Reference</a>
-              <a href="#help">Help Center</a>
-              <a href="#status">System Status</a>
-              <a href="#security">Trust Report</a>
+              <h4>Navigation</h4>
+              <button onClick={() => handleScrollTo('home')}>Home</button>
+              <button onClick={() => handleScrollTo('services')}>Services</button>
+              <button onClick={() => handleScrollTo('about')}>About Us</button>
+              <button onClick={() => openContact()}>Contact</button>
             </div>
 
             <div className="footer-col">
@@ -64,7 +40,7 @@ export default function Footer({ handleScrollTo, openContact }) {
               <a href={WA_BASE} target="_blank" rel="noreferrer" className="support-wa-link">
                 Chat on WhatsApp
               </a>
-              <p className="support-sla">Direct developer support via WhatsApp, Email & Slack</p>
+              <p className="support-sla">Direct support via WhatsApp & Email</p>
             </div>
           </div>
         </div>

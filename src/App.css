@@ -1610,6 +1610,7 @@ section {
 .footer-socials {
   display: flex;
   gap: 12px;
+  margin-top: 32px;
 }
 
 .footer-socials a {
@@ -4651,8 +4652,8 @@ section {
 
 .footer-links-columns {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
 }
 
 .footer-col h4 {
@@ -4801,7 +4802,7 @@ section {
   }
   
   .footer-links-columns {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
