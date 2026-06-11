@@ -2553,6 +2553,8 @@ section {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .hero-badge-premium {
@@ -2671,6 +2673,7 @@ section {
   gap: clamp(8px, 1.5vw, 24px);
   width: 100%;
   grid-column: 1 / -1;
+  grid-row: 2;
   margin-top: 32px;
 }
 
@@ -2713,6 +2716,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .ai-scene-container {
@@ -2923,6 +2928,13 @@ section {
   .hero-left-col {
     align-items: center;
     text-align: center;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .hero-right-col {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .hero-subtitle-premium {
@@ -2938,6 +2950,8 @@ section {
     justify-content: center;
     flex-wrap: wrap;
     gap: 16px;
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .stat-divider {
