@@ -9716,12 +9716,6 @@ html, body, #root {
   }
 }
 
-.hero-stats-row {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  gap: clamp(8px, 1.5vw, 24px) !important;
-  justify-content: space-between !important;
-}
 
 /* ==========================================
    MOBILE LAYOUT COMPACTION ALIGNMENT FIXES
