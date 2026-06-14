@@ -2916,7 +2916,7 @@ section {
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
   .hero-section-premium {
-    padding: 88px 16px 24px !important;
+    padding: 76px 16px 96px !important;
     min-height: 100vh !important;
     display: flex !important;
     align-items: center !important;
