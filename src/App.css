@@ -2939,6 +2939,10 @@ section {
 
   .hero-badge-premium {
     margin-bottom: 12px !important;
+    font-size: clamp(8px, 2.2vw, 10px) !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.2px !important;
+    padding: 5px 10px !important;
   }
 
   .hero-title-premium {
