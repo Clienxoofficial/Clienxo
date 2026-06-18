@@ -34,6 +34,7 @@
 
   --robot-bg-start: #f8fafc;
   --robot-bg-end: #f1f5f9;
+  --dot-field-glow-color: rgba(79, 70, 229, 0.1);
   
   /* Scroll behavior */
   scroll-behavior: smooth;
@@ -72,6 +73,7 @@ html.dark,
 
   --robot-bg-start: #0a0b14;
   --robot-bg-end: #060710;
+  --dot-field-glow-color: rgba(99, 102, 241, 0.16);
 }
 
 html {

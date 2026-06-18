@@ -16,7 +16,7 @@ const DotField = memo(({
   waveAmplitude = 0,
   gradientFrom = 'rgba(168, 85, 247, 0.35)',
   gradientTo = 'rgba(180, 151, 207, 0.25)',
-  glowColor = '#120F17',
+  glowColor = 'var(--dot-field-glow-color, rgba(99, 102, 241, 0.15))',
   ...rest
 }) => {
   const canvasRef = useRef(null);
@@ -142,8 +142,8 @@ const DotField = memo(({
 
       // Determine colors based on active theme
       const isLight = themeRef.current === 'light';
-      const activeGradientFrom = isLight ? 'rgba(79, 70, 229, 0.22)' : 'rgba(99, 102, 241, 0.35)';
-      const activeGradientTo = isLight ? 'rgba(8, 145, 178, 0.14)' : 'rgba(6, 182, 212, 0.25)';
+      const activeGradientFrom = isLight ? 'rgba(79, 70, 229, 0.45)' : 'rgba(99, 102, 241, 0.5)';
+      const activeGradientTo = isLight ? 'rgba(8, 145, 178, 0.35)' : 'rgba(6, 182, 212, 0.4)';
 
       const grad = ctx.createLinearGradient(0, 0, w, h);
       grad.addColorStop(0, activeGradientFrom);
