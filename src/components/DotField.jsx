@@ -16,12 +16,13 @@ const DotField = memo(({
   waveAmplitude = 0,
   gradientFrom = 'rgba(168, 85, 247, 0.35)',
   gradientTo = 'rgba(180, 151, 207, 0.25)',
-  glowColor = 'var(--dot-field-glow-color, rgba(99, 102, 241, 0.15))',
+  glowColor = 'rgba(99, 102, 241, 0.15)',
   ...rest
 }) => {
   const canvasRef = useRef(null);
   const svgRef = useRef(null);
   const glowRef = useRef(null);
+  const stopRef = useRef(null);
   const dotsRef = useRef([]);
   const mouseRef = useRef({ x: -9999, y: -9999, prevX: -9999, prevY: -9999, speed: 0 });
   const rafRef = useRef(null);
@@ -136,6 +137,12 @@ const DotField = memo(({
         glowEl.setAttribute('cx', m.x);
         glowEl.setAttribute('cy', m.y);
         glowEl.style.opacity = glowOpacity.current;
+      }
+
+      if (stopRef.current) {
+        const isLight = themeRef.current === 'light';
+        const stopColorVal = isLight ? 'rgba(79, 70, 229, 0.1)' : 'rgba(99, 102, 241, 0.16)';
+        stopRef.current.setAttribute('stop-color', stopColorVal);
       }
 
       ctx.clearRect(0, 0, w, h);
@@ -271,7 +278,7 @@ const DotField = memo(({
       >
         <defs>
           <radialGradient id={glowIdRef.current}>
-            <stop offset="0%" stopColor={glowColor} />
+            <stop ref={stopRef} offset="0%" stopColor={glowColor} />
             <stop offset="100%" stopColor="transparent" />
           </radialGradient>
         </defs>
