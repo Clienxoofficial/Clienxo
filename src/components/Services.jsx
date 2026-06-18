@@ -1,6 +1,7 @@
 "use client";
 import { ArrowRight, Check } from 'lucide-react';
 import { SERVICES } from '../constants/data';
+import DotField from './DotField';
 
 export default function Services({ handleScrollTo, setSelectedService, openContact }) {
   const renderCard = (service, idx) => (
@@ -45,7 +46,16 @@ export default function Services({ handleScrollTo, setSelectedService, openConta
 
   return (
     <section id="services" className="services-grid-section fade-in-section">
-      <div className="section-container">
+      <DotField
+        dotRadius={1.8}
+        dotSpacing={16}
+        bulgeStrength={60}
+        glowRadius={180}
+        sparkle={false}
+        waveAmplitude={6}
+        cursorRadius={220}
+      />
+      <div className="section-container relative z-10">
         <div className="section-header">
           <span className="section-mini-title">OUR SERVICES</span>
           <h2 className="section-title uppercase">Growth Services For Modern Startups</h2>

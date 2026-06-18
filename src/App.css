@@ -571,6 +571,8 @@
    ========================================== */
 .about-section {
   background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
 }
 
 /* ── About Section: Scoped Typography ── */

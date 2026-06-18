@@ -1,10 +1,20 @@
 "use client";
 import { CheckCircle2, ChevronRight, ShieldCheck, Users } from 'lucide-react';
+import DotField from './DotField';
 
 export default function About({ handleScrollTo, openContact }) {
   return (
     <section id="about" className="about-section fade-in-section">
-      <div className="section-container">
+      <DotField
+        dotRadius={1.8}
+        dotSpacing={16}
+        bulgeStrength={60}
+        glowRadius={180}
+        sparkle={false}
+        waveAmplitude={6}
+        cursorRadius={220}
+      />
+      <div className="section-container relative z-10">
         <div className="section-header about-section-header">
           <span className="section-mini-title">WHO WE ARE</span>
           <h2 className="section-title">Engineering the Future With <span className="text-gradient-neon">AI & Custom Software</span></h2>
