@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { UserCheck, Sliders, Shield, Zap, HeartHandshake, Award } from 'lucide-react';
+import DotField from './DotField';
 
 const CHOOSE_CARDS = [
   {
@@ -71,7 +72,16 @@ export default function WhyChooseUs() {
 
   return (
     <section id="why-choose-us" className="why-choose-us-section fade-in-section">
-      <div className="section-container">
+      <DotField
+        dotRadius={1.8}
+        dotSpacing={16}
+        bulgeStrength={60}
+        glowRadius={180}
+        sparkle={false}
+        waveAmplitude={6}
+        cursorRadius={220}
+      />
+      <div className="section-container relative z-10">
         <div className="section-header">
           <span className="section-mini-title">OUR EDGE</span>
           <h2 className="section-title uppercase">Why Businesses Choose Us</h2>

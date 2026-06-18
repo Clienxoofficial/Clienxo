@@ -1,7 +1,10 @@
-import { Inter, Outfit } from 'next/font/google';
+import { Inter, Outfit, Geist } from 'next/font/google';
 import './globals.css';
 import '../index.css';
 import '../App.css';
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,7 +31,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
+    <html lang="en" className={cn(inter.variable, outfit.variable, "font-sans", geist.variable)} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{

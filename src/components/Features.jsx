@@ -14,7 +14,7 @@ export default function Features() {
         waveAmplitude={6}
         cursorRadius={220}
       />
-      <div className="section-container">
+      <div className="section-container relative z-10">
         <div className="section-header">
           <span className="section-mini-title">FEATURES</span>
           <h2 className="section-title uppercase">Built for Speed, Engineered for Scale</h2>

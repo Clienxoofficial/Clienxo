@@ -3943,6 +3943,11 @@ section {
   letter-spacing: 1px;
 }
 
+.features-section {
+  position: relative;
+  overflow: hidden;
+}
+
 /* Features Grid */
 .features-grid-four {
   display: grid;
@@ -9094,6 +9099,8 @@ section {
 .why-choose-us-section {
   padding: 0;
   background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
 }
 
 .why-grid-layout {
