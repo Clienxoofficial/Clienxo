@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { X, Shield, FileText, ChevronRight } from 'lucide-react';
 
 const PRIVACY_CONTENT = {
@@ -178,6 +178,14 @@ export default function LegalModal({ type, onClose }) {
   const content = type === 'privacy' ? PRIVACY_CONTENT : TERMS_CONTENT;
   const Icon = content.icon;
 
+  const handleClose = useCallback(() => {
+    setClosing(true);
+    setTimeout(() => {
+      setClosing(false);
+      onClose();
+    }, 300);
+  }, [onClose]);
+
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     const onKey = (e) => { if (e.key === 'Escape') handleClose(); };
@@ -186,15 +194,7 @@ export default function LegalModal({ type, onClose }) {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', onKey);
     };
-  }, []);
-
-  const handleClose = () => {
-    setClosing(true);
-    setTimeout(() => {
-      setClosing(false);
-      onClose();
-    }, 300);
-  };
+  }, [handleClose]);
 
   if (!type) return null;
 

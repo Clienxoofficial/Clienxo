@@ -74,6 +74,10 @@ html.dark,
   --robot-bg-end: #060710;
 }
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 /* Global Reset & Base Styles */
 * {
   box-sizing: border-box;

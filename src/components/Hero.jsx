@@ -22,9 +22,9 @@ export default function Hero({ handleScrollTo, openContact }) {
 
   // Parallax slide down effect instead of 3D flip
   const translateY = scrollY * 0.4;
-  const opacity = Math.max(1 - scrollY / 700, 0); 
+  const opacity = Math.max(1 - scrollY / 700, 0);
   const scale = Math.max(1 - scrollY / 1200, 0.9);
-  
+
   const heroStyle = {
     transform: `translateY(${translateY}px) scale(${scale})`,
     opacity: opacity,
@@ -47,17 +47,7 @@ export default function Hero({ handleScrollTo, openContact }) {
       <div className="hero-container-split" style={heroStyle}>
         {/* Left Side: Enterprise Typography and Stats */}
         <div className="hero-left-col fade-in-section is-visible">
-          <div className="hero-badge-premium">
-            <span className="badge-glow-dot"></span>
-            Building AI-Powered Software That Grows Your Business
-          </div>
-          
-          <h1 className="hero-title-premium hide-on-mobile">
-            Custom Software & <br />
-            AI Solutions for <br />
-            <span className="text-gradient-neon">Startups and Growing Businesses</span>
-          </h1>
-          <h1 className="hero-title-premium show-on-mobile">
+          <h1 className="hero-title-premium">
             AI & Custom Software <br />
             <span className="text-gradient-neon">For Growing Businesses</span>
           </h1>
@@ -124,13 +114,13 @@ export default function Hero({ handleScrollTo, openContact }) {
                 <filter id="ambient-blur" x="-50%" y="-50%" width="200%" height="200%">
                   <feGaussianBlur stdDeviation="40" />
                 </filter>
-                
+
                 {/* Gradients */}
                 <linearGradient id="grad-primary" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#7C6BFF" />
                   <stop offset="100%" stopColor="#4F8CFF" />
                 </linearGradient>
-                
+
                 <linearGradient id="grad-secondary" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#5EEBFF" />
                   <stop offset="100%" stopColor="#4F8CFF" />
@@ -163,12 +153,12 @@ export default function Hero({ handleScrollTo, openContact }) {
               <g className="dev-character">
                 <path className="dev-body" d="M 60,450 C 60,360 90,320 145,315 C 150,305 160,295 170,295 C 180,295 190,305 195,315 C 250,320 280,360 280,450 Z" fill="url(#grad-jacket)" stroke="rgba(124, 107, 255, 0.2)" strokeWidth="1.5" />
                 <path className="dev-body-trim" d="M 145,315 C 150,335 155,360 155,450 M 195,315 C 190,335 185,360 185,450" stroke="#7C6BFF" strokeWidth="1.5" opacity="0.4" fill="none" />
-                
+
                 {/* Head & Neck */}
                 <path d="M 155,295 L 155,270 L 185,270 L 185,295 Z" fill="#1e1b4b" stroke="rgba(124, 107, 255, 0.15)" strokeWidth="1" />
                 <path className="dev-face" d="M 160,270 C 160,215 210,220 205,255 C 205,270 190,280 160,270 Z" fill="#1e1e38" stroke="rgba(124, 107, 255, 0.3)" strokeWidth="1" />
                 <path className="dev-hair" d="M 160,270 C 155,240 160,210 190,215 C 200,215 205,225 200,235 C 195,225 180,230 180,245 C 180,250 175,255 170,260" fill="#0f172a" />
-                
+
                 {/* Cyber Visor */}
                 <path className="dev-visor" d="M 180,235 L 208,245 L 204,256 L 176,246 Z" fill="#5EEBFF" filter="url(#neon-glow-primary)" />
                 <path className="dev-visor-glow" d="M 180,235 L 208,245" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
@@ -266,7 +256,7 @@ export default function Hero({ handleScrollTo, openContact }) {
                   <circle cx="430" cy="290" r="4" fill="#5EEBFF" filter="url(#neon-glow-primary)" />
                   <circle cx="440" cy="350" r="6" fill="#4F8CFF" filter="url(#neon-glow-primary)" />
                   <circle cx="460" cy="310" r="4" fill="#ffffff" filter="url(#neon-glow-primary)" />
-                  
+
                   <g transform="translate(420, 310)">
                     <polygon points="-8,-4 0,-12 8,-4 5,8 -5,8" fill="rgba(94, 235, 255, 0.1)" stroke="#5EEBFF" strokeWidth="1" />
                     <circle cx="0" cy="-2" r="2.5" fill="#5EEBFF" />

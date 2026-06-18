@@ -7,7 +7,7 @@ export default function About({ handleScrollTo, openContact }) {
       <div className="section-container">
         <div className="section-header about-section-header">
           <span className="section-mini-title">WHO WE ARE</span>
-          <h2 className="section-title">Who We Are — Architecting Modern <span className="text-gradient-neon">Digital Systems</span></h2>
+          <h2 className="section-title">Engineering the Future With <span className="text-gradient-neon">AI & Custom Software</span></h2>
           <div className="header-bar about-header-bar"></div>
         </div>
 
@@ -152,7 +152,7 @@ export default function About({ handleScrollTo, openContact }) {
                   {/* Code lines on screen */}
                   <text x="108" y="68" fontFamily="monospace" fontSize="7" fill="#c792ea" className="rb-code-line rb-cl1">const Robot = () =&gt; {'{'}</text>
                   <text x="116" y="79" fontFamily="monospace" fontSize="7" fill="#82aaff" className="rb-code-line rb-cl2">  const [mode, setMode]</text>
-                  <text x="116" y="90" fontFamily="monospace" fontSize="7" fill="#c3e88d" className="rb-code-line rb-cl3">    = useState('code');</text>
+                  <text x="116" y="90" fontFamily="monospace" fontSize="7" fill="#c3e88d" className="rb-code-line rb-cl3">    = useState(&apos;code&apos;);</text>
                   <text x="116" y="101" fontFamily="monospace" fontSize="7" fill="#ffcb6b" className="rb-code-line rb-cl4">  useEffect(() =&gt; {'{'}</text>
                   <text x="124" y="112" fontFamily="monospace" fontSize="7" fill="#89ddff" className="rb-code-line rb-cl5">    deploy(ai_model);</text>
                   <text x="116" y="123" fontFamily="monospace" fontSize="7" fill="#ffcb6b" className="rb-code-line rb-cl6">  {'}'}, []);</text>

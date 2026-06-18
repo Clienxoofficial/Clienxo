@@ -19,6 +19,7 @@ import ProcessTimeline from '../components/ProcessTimeline';
 import WhyChooseUs from '../components/WhyChooseUs';
 import FaqAccordion from '../components/FaqAccordion';
 import WhatWeDoPage from '../components/WhatWeDoPage';
+import WhatsAppWidget from '../components/WhatsAppWidget';
 
 export default function Home() {
   // Navigation & Theme
@@ -220,6 +221,7 @@ export default function Home() {
         isOpen={isWhatWeDoOpen}
         onClose={closeWhatWeDo}
       />
+      <WhatsAppWidget />
     </>
   );
 }

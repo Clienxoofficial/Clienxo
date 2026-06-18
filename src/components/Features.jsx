@@ -1,9 +1,19 @@
 "use client";
 import { Sparkles, Shield, Zap, Briefcase } from 'lucide-react';
+import DotField from './DotField';
 
 export default function Features() {
   return (
     <section className="features-section fade-in-section">
+      <DotField
+        dotRadius={1.8}
+        dotSpacing={16}
+        bulgeStrength={60}
+        glowRadius={180}
+        sparkle={false}
+        waveAmplitude={6}
+        cursorRadius={220}
+      />
       <div className="section-container">
         <div className="section-header">
           <span className="section-mini-title">FEATURES</span>

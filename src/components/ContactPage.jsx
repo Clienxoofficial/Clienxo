@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, Mail, Phone, MessageSquare, ArrowRight, Check, ExternalLink, Sparkles, Send } from 'lucide-react';
 import { CONTACT, WA_BASE, TEL_LINK, MAIL_LINK } from '../constants/config';
 
@@ -23,21 +23,21 @@ export default function ContactPage({ isOpen, onClose, formData, setFormData }) 
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
-  // Escape to go back
-  useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape' && isOpen) handleClose(); };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [isOpen]);
-
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setIsLeaving(true);
     setTimeout(() => {
       setIsLeaving(false);
       setMounted(false);
       onClose();
     }, 520);
-  };
+  }, [onClose]);
+
+  // Escape to go back
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape' && isOpen) handleClose(); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [isOpen, handleClose]);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
