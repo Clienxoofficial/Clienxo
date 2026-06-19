@@ -70,7 +70,7 @@ const SOLUTIONS_DATA = [
   }
 ];
 
-export default function WhatWeDoPage({ isOpen, onClose }) {
+export default function WhatWeDoPage({ isOpen, onClose, openContact }) {
   const [mounted, setMounted] = useState(false);
   const [isLeaving, setIsLeaving] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -103,6 +103,16 @@ export default function WhatWeDoPage({ isOpen, onClose }) {
       onClose();
     }, 520);
   }, [onClose]);
+
+  const handleCtaClick = useCallback(() => {
+    setIsLeaving(true);
+    setTimeout(() => {
+      setIsLeaving(false);
+      setMounted(false);
+      onClose();
+      if (openContact) openContact();
+    }, 520);
+  }, [onClose, openContact]);
 
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape' && isOpen) handleClose(); };
@@ -198,7 +208,7 @@ export default function WhatWeDoPage({ isOpen, onClose }) {
         {/* CTA at bottom */}
         <div className="wwdo-cta-row">
           <p className="wwdo-cta-label">Ready to build something great?</p>
-          <button className="wwdo-cta-btn" onClick={handleClose}>
+          <button className="wwdo-cta-btn" onClick={handleCtaClick}>
             Get a Free Quote <ArrowRight size={16} />
           </button>
         </div>

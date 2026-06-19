@@ -228,6 +228,7 @@ export default function Home() {
       <WhatWeDoPage
         isOpen={isWhatWeDoOpen}
         onClose={closeWhatWeDo}
+        openContact={openContact}
       />
       <WhatsAppWidget />
     </>
