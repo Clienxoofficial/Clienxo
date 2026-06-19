@@ -1,5 +1,6 @@
 "use client";
 import { Sparkles, Sun, Moon, Menu, X, ArrowRight } from 'lucide-react';
+import GooeyNav from './GooeyNav';
 
 export default function Header({
   scrolled,
@@ -12,6 +13,21 @@ export default function Header({
   openContact,
   mounted
 }) {
+  const sectionToIndex = {
+    'home': 0,
+    'services': 1,
+    'about': 2,
+    'contact': 3
+  };
+  const activeIndex = sectionToIndex[activeSection] !== undefined ? sectionToIndex[activeSection] : 0;
+
+  const navItems = [
+    { label: "Home", href: "#home", onClick: () => handleScrollTo('home') },
+    { label: "Services", href: "#services", onClick: () => handleScrollTo('services') },
+    { label: "About", href: "#about", onClick: () => handleScrollTo('about') },
+    { label: "Contact", href: "#contact", onClick: openContact },
+  ];
+
   return (
     <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
@@ -21,10 +37,15 @@ export default function Header({
         </div>
 
         <nav className="desktop-nav">
-          <button className={`nav-link ${activeSection === 'home' ? 'active' : ''}`} onClick={() => handleScrollTo('home')}>Home</button>
-          <button className={`nav-link ${activeSection === 'services' ? 'active' : ''}`} onClick={() => handleScrollTo('services')}>Services</button>
-          <button className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} onClick={() => handleScrollTo('about')}>About</button>
-          <button className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} onClick={openContact}>Contact</button>
+          <GooeyNav
+            items={navItems}
+            activeIndex={activeIndex}
+            particleCount={12}
+            particleDistances={[60, 8]}
+            particleR={80}
+            animationTime={500}
+            timeVariance={200}
+          />
         </nav>
 
         <div className="navbar-actions">
