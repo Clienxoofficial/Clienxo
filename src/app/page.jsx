@@ -31,7 +31,7 @@ export default function Home() {
 
   // Shared States
   const [selectedService, setSelectedService] = useState(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
+
   const [isWhatWeDoOpen, setIsWhatWeDoOpen] = useState(false);
 
   const openWhatWeDo = () => setIsWhatWeDoOpen(true);
@@ -49,17 +49,7 @@ export default function Home() {
   const openContact = () => setIsContactOpen(true);
   const closeContact = () => setIsContactOpen(false);
 
-  // Handle scroll progress tracking
-  useEffect(() => {
-    const handleScrollProgress = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        setScrollProgress((window.scrollY / totalHeight) * 100);
-      }
-    };
-    window.addEventListener('scroll', handleScrollProgress);
-    return () => window.removeEventListener('scroll', handleScrollProgress);
-  }, []);
+
 
   // Setup Theme on Mount & Update
   useEffect(() => {
@@ -163,7 +153,6 @@ export default function Home() {
 
   return (
     <>
-      <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }}></div>
       <div className="tech-grid"></div>
       
       {/* Premium Dark Theme Neon Glow Elements */}
