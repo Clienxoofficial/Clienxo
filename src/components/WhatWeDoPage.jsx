@@ -5,6 +5,7 @@ import {
   Users, Layers, Cpu, MessageSquare, Calendar, BookOpen,
   BarChart3, Box, Zap, ShoppingCart, Key, ShieldCheck, ArrowRight
 } from 'lucide-react';
+import ScrollStack, { ScrollStackItem } from './ScrollStack';
 
 const SOLUTIONS_DATA = [
   {
@@ -72,6 +73,16 @@ const SOLUTIONS_DATA = [
 export default function WhatWeDoPage({ isOpen, onClose }) {
   const [mounted, setMounted] = useState(false);
   const [isLeaving, setIsLeaving] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -137,25 +148,52 @@ export default function WhatWeDoPage({ isOpen, onClose }) {
           </p>
         </div>
 
-        {/* 12-card grid */}
-        <div className="wwdo-grid">
-          {SOLUTIONS_DATA.map((sol, idx) => (
-            <div
-              key={idx}
-              className="wwdo-card"
-              style={{ animationDelay: `${idx * 0.05}s` }}
-            >
-              <div className="wwdo-card__icon-wrap">
-                {sol.icon}
+        {/* 12-card grid / scroll stack */}
+        {isMobile ? (
+          <ScrollStack
+            scrollContainerSelector=".wwdo-root"
+            itemDistance={16}
+            itemStackDistance={20}
+            baseScale={0.78}
+            itemScale={0.02}
+            className="wwdo-scroll-stack"
+          >
+            {SOLUTIONS_DATA.map((sol, idx) => (
+              <ScrollStackItem key={idx} itemClassName="scroll-stack-item-wrap">
+                <div className="wwdo-card">
+                  <div className="wwdo-card__icon-wrap">
+                    {sol.icon}
+                  </div>
+                  <div className="wwdo-card__body">
+                    <h3>{sol.title}</h3>
+                    <p>{sol.desc}</p>
+                  </div>
+                  <div className="wwdo-card__glow" aria-hidden="true" />
+                </div>
+              </ScrollStackItem>
+            ))}
+            <div className="scroll-stack-end" style={{ height: '1px', width: '100%' }} />
+          </ScrollStack>
+        ) : (
+          <div className="wwdo-grid">
+            {SOLUTIONS_DATA.map((sol, idx) => (
+              <div
+                key={idx}
+                className="wwdo-card"
+                style={{ animationDelay: `${idx * 0.05}s` }}
+              >
+                <div className="wwdo-card__icon-wrap">
+                  {sol.icon}
+                </div>
+                <div className="wwdo-card__body">
+                  <h3>{sol.title}</h3>
+                  <p>{sol.desc}</p>
+                </div>
+                <div className="wwdo-card__glow" aria-hidden="true" />
               </div>
-              <div className="wwdo-card__body">
-                <h3>{sol.title}</h3>
-                <p>{sol.desc}</p>
-              </div>
-              <div className="wwdo-card__glow" aria-hidden="true" />
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* CTA at bottom */}
         <div className="wwdo-cta-row">

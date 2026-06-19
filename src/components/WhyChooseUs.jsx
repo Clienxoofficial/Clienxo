@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { UserCheck, Sliders, Shield, Zap, HeartHandshake, Award } from 'lucide-react';
 import DotField from './DotField';
 
@@ -45,8 +45,31 @@ const STATS_DATA = [
 
 export default function WhyChooseUs() {
   const [stats, setStats] = useState(STATS_DATA.map(() => 0));
+  const containerRef = useRef(null);
+  const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
+    if (typeof IntersectionObserver === 'undefined') {
+      setHasStarted(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries && entries[0] && entries[0].isIntersecting) {
+        setHasStarted(true);
+      }
+    }, { threshold: 0.15 });
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
     const duration = 1500;
     const intervalTime = 30;
     const steps = duration / intervalTime;
@@ -68,10 +91,10 @@ export default function WhyChooseUs() {
     }, intervalTime);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [hasStarted]);
 
   return (
-    <section id="why-choose-us" className="why-choose-us-section fade-in-section">
+    <section id="why-choose-us" ref={containerRef} className="why-choose-us-section fade-in-section">
       <DotField
         dotRadius={1.8}
         dotSpacing={16}

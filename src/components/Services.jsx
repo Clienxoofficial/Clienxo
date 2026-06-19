@@ -1,13 +1,26 @@
 "use client";
+import { useState, useEffect } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { SERVICES } from '../constants/data';
 import DotField from './DotField';
+import ScrollStack, { ScrollStackItem } from './ScrollStack';
 
 export default function Services({ handleScrollTo, setSelectedService, openContact }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const renderCard = (service, idx) => (
     <div 
       key={service.id} 
-      className="service-card-premium glass-card"
+      className="service-card-premium"
       onClick={() => setSelectedService(service)}
     >
       <div className="card-glow-effect"></div>
@@ -65,9 +78,28 @@ export default function Services({ handleScrollTo, setSelectedService, openConta
           </p>
         </div>
 
-        <div className="services-grid-cards services-container-modern">
-          {SERVICES.map((service, idx) => renderCard(service, idx))}
-        </div>
+        {isMobile ? (
+          <ScrollStack
+            useWindowScroll={true}
+            itemDistance={16}
+            itemStackDistance={30}
+            baseScale={0.85}
+            itemScale={0.03}
+            stackPosition="20%"
+            scaleEndPosition="10%"
+            className="services-scroll-stack"
+          >
+            {SERVICES.map((service, idx) => (
+              <ScrollStackItem key={service.id} itemClassName="services-stack-item-wrap">
+                {renderCard(service, idx)}
+              </ScrollStackItem>
+            ))}
+          </ScrollStack>
+        ) : (
+          <div className="services-grid-cards services-container-modern">
+            {SERVICES.map((service, idx) => renderCard(service, idx))}
+          </div>
+        )}
       </div>
     </section>
   );
