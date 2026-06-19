@@ -218,6 +218,10 @@ const ScrollStack = ({
   }, [updateCardTransforms]);
 
   const setupLenis = useCallback(() => {
+    const isTouchDevice = typeof window !== 'undefined' && 
+      ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    if (isTouchDevice) return null;
+
     if (useWindowScroll) {
       const lenis = new Lenis({
         duration: 1.2,
@@ -296,15 +300,28 @@ const ScrollStack = ({
       card.style.webkitPerspective = '1000px';
     });
     
-    setupLenis();
+    const isTouchDevice = typeof window !== 'undefined' && 
+      ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
+    const scrollTarget = useWindowScroll ? window : (scroller || window);
+    let activeLenis = null;
+
+    if (isTouchDevice) {
+      scrollTarget.addEventListener('scroll', handleScroll, { passive: true });
+    } else {
+      activeLenis = setupLenis();
+    }
+
     updateCardTransforms();
     
     return () => {
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
-      if (lenisRef.current) {
-        lenisRef.current.destroy();
+      if (activeLenis) {
+        activeLenis.destroy();
+      } else if (isTouchDevice) {
+        scrollTarget.removeEventListener('scroll', handleScroll);
       }
       stackCompletedRef.current = false;
       cardsRef.current = [];
@@ -325,7 +342,8 @@ const ScrollStack = ({
     scrollContainerSelector,
     onStackComplete,
     setupLenis,
-    updateCardTransforms
+    updateCardTransforms,
+    handleScroll
   ]);
 
   return (

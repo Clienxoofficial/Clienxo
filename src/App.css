@@ -11454,6 +11454,7 @@ body,
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
     margin-bottom: 0 !important;
     box-sizing: border-box !important;
+    transition: none !important;
   }
 
   .wwdo-main {
@@ -11493,5 +11494,6 @@ body,
     margin-bottom: 0 !important;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45) !important;
     box-sizing: border-box !important;
+    transition: none !important;
   }
 }
