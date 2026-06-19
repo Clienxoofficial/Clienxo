@@ -22,6 +22,11 @@ export default function WhatsAppWidget() {
 
   return (
     <div className="wa-widget-container">
+      {/* Sleek Premium Tooltip */}
+      <div className="wa-tooltip">
+        Chat with us
+      </div>
+
       {/* Floating Button Bubble */}
       <button 
         className="wa-float-btn"
