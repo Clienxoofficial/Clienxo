@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 // Component Imports
 import Header from '../components/Header';
@@ -28,6 +28,14 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const isClickScrollingRef = useRef(false);
+
+  const getNavActiveSection = (section) => {
+    if (['home'].includes(section)) return 'home';
+    if (['about', 'why-choose-us'].includes(section)) return 'about';
+    if (['services', 'solutions-build', 'process-timeline', 'faq'].includes(section)) return 'services';
+    return section;
+  };
 
   // Shared States
   const [selectedService, setSelectedService] = useState(null);
@@ -103,6 +111,7 @@ export default function Home() {
 
     const sectionObserver = new IntersectionObserver((entries) => {
       if (!entries) return;
+      if (isClickScrollingRef.current) return;
       entries.forEach(entry => {
         if (entry && entry.isIntersecting && entry.target) {
           setActiveSection(entry.target.id);
@@ -145,10 +154,20 @@ export default function Home() {
       openContact();
       return;
     }
+    
+    // Instantly update active section to clicked link
+    setActiveSection(id);
+    isClickScrollingRef.current = true;
+    
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+    
+    // Release the observer update lock after smooth scroll settles
+    setTimeout(() => {
+      isClickScrollingRef.current = false;
+    }, 800);
   };
 
   return (
@@ -161,7 +180,7 @@ export default function Home() {
 
       <Header
         scrolled={scrolled}
-        activeSection={activeSection}
+        activeSection={getNavActiveSection(activeSection)}
         handleScrollTo={handleScrollTo}
         theme={theme}
         handleToggleTheme={handleToggleTheme}
