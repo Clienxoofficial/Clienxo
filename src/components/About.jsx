@@ -17,7 +17,7 @@ export default function About({ handleScrollTo, openContact }) {
       <div className="section-container relative z-10">
         <div className="section-header about-section-header">
           <span className="section-mini-title">WHO WE ARE</span>
-          <h2 className="section-title">Engineering the Future With <span className="text-gradient-neon">AI & Custom Software</span></h2>
+          <h2 className="section-title">Building AI Systems &amp; <span className="text-gradient-neon">Modern Software That Scale</span></h2>
           <div className="header-bar about-header-bar"></div>
         </div>
 

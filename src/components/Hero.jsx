@@ -48,7 +48,7 @@ export default function Hero({ handleScrollTo, openContact }) {
         {/* Left Side: Enterprise Typography and Stats */}
         <div className="hero-left-col fade-in-section is-visible">
           <h1 className="hero-title-premium">
-            AI & Custom Software <br />
+            AI &amp; Custom Software <br />
             <span className="text-gradient-neon">For Growing Businesses</span>
           </h1>
 
@@ -66,7 +66,7 @@ export default function Hero({ handleScrollTo, openContact }) {
           </div>
         </div>
 
-        {/* Statistics Row (positioned outside left column to stack at the bottom on mobile) */}
+        {/* Statistics Row */}
         <div className="hero-stats-row">
           <div className="stat-item">
             <span className="num text-gradient-neon">25+</span>
