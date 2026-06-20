@@ -18,13 +18,13 @@ export default function Services({ handleScrollTo, setSelectedService, openConta
   }, []);
 
   const renderCard = (service, idx) => (
-    <div 
-      key={service.id} 
+    <div
+      key={service.id}
       className="service-card-premium"
       onClick={() => setSelectedService(service)}
     >
       <div className="card-glow-effect"></div>
-      
+
       <div className="service-card-top">
         <div className="service-card-icon-box">
           {service.icon}
