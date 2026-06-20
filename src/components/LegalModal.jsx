@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useCallback } from 'react';
 import { X, Shield, FileText, ChevronRight } from 'lucide-react';
+import { CONTACT } from '../constants/config';
 
 const PRIVACY_CONTENT = {
   title: "Privacy Policy",
@@ -64,15 +65,15 @@ Each third party has their own privacy policy and we recommend reviewing them in
 • **Deletion**: Request deletion of your personal data at any time.
 • **Opt-Out**: Unsubscribe from any communications at any time.
 
-To exercise any of these rights, contact us at: sivanandmp18@gmail.com`
+To exercise any of these rights, contact us at: ${CONTACT.email}`
     },
     {
       heading: "7. Contact Us",
       body: `If you have any questions about this Privacy Policy or how we handle your data, please reach out:
 
-📧 Email: sivanandmp18@gmail.com
-📞 Phone: +91 94476 28475
-💬 WhatsApp: wa.me/919447628475
+📧 Email: ${CONTACT.email}
+📞 Phone: ${CONTACT.phoneDisplay}
+💬 WhatsApp: wa.me/${CONTACT.waNumber}
 
 We aim to respond to all privacy-related queries within 2 business days.`
     }
@@ -166,9 +167,9 @@ We are not liable for:
       heading: "10. Contact",
       body: `For any questions regarding these Terms of Service:
 
-📧 Email: sivanandmp18@gmail.com
-📞 Phone: +91 94476 28475
-🌐 Website: clienxo.com`
+📧 Email: ${CONTACT.email}
+📞 Phone: ${CONTACT.phoneDisplay}
+🌐 Website: ${CONTACT.companyName.toLowerCase()}.com`
     }
   ]
 };

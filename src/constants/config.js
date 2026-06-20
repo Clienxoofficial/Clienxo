@@ -5,10 +5,10 @@
  */
 
 export const CONTACT = {
-  phoneDisplay:  process.env.NEXT_PUBLIC_PHONE_DISPLAY  || '+91 94476 28475',
-  phoneLink:     process.env.NEXT_PUBLIC_PHONE_LINK     || '+919447628475',
-  waNumber:      process.env.NEXT_PUBLIC_WA_NUMBER      || '919447628475',
-  email:         process.env.NEXT_PUBLIC_EMAIL          || 'sivanandmp18@gmail.com',
+  phoneDisplay:  process.env.NEXT_PUBLIC_PHONE_DISPLAY  || '+91 75940 04126',
+  phoneLink:     process.env.NEXT_PUBLIC_PHONE_LINK     || '+917594004126',
+  waNumber:      process.env.NEXT_PUBLIC_WA_NUMBER      || '917594004126',
+  email:         process.env.NEXT_PUBLIC_EMAIL          || 'clienxoofficial@gmail.com',
   companyName:   process.env.NEXT_PUBLIC_COMPANY_NAME   || 'Clienxo',
   siteUrl:       process.env.NEXT_PUBLIC_SITE_URL       || 'https://clienxo.com',
 };

@@ -176,7 +176,7 @@ export default function ContactPage({ isOpen, onClose, formData, setFormData }) 
                 </div>
                 <div className="cp-contact-card__body">
                   <span className="cp-contact-card__tag">WhatsApp</span>
-                  <span className="cp-contact-card__val">+91 94476 28475</span>
+                  <span className="cp-contact-card__val">{CONTACT.phoneDisplay}</span>
                   <span className="cp-contact-card__desc">Instant chat & project kick-offs</span>
                 </div>
                 <ExternalLink size={14} className="cp-contact-card__ext" />
