@@ -1,5 +1,6 @@
 "use client";
-import { Sparkles, Sun, Moon, Menu, X, ArrowRight } from 'lucide-react';
+import { Sun, Moon, Menu, X, ArrowRight } from 'lucide-react';
+import ClienxoLogo from './ClienxoLogo';
 
 export default function Header({
   scrolled,
@@ -15,10 +16,7 @@ export default function Header({
   return (
     <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <div className="navbar-logo" onClick={() => handleScrollTo('home')}>
-          <Sparkles className="logo-spark" />
-          <span className="logo-text" data-text="CLIENXO">CLIEN<span className="text-gradient">XO</span></span>
-        </div>
+        <ClienxoLogo onClick={() => handleScrollTo('home')} />
 
         <nav className="desktop-nav">
           <button className={`nav-link ${activeSection === 'home' ? 'active' : ''}`} onClick={() => handleScrollTo('home')}>Home</button>

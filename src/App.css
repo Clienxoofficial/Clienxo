@@ -43,6 +43,13 @@
   font-family: var(--font-heading);
 }
 
+.logo-cx {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
 .logo-spark {
   color: var(--accent-primary);
   animation: spin-slow 15s linear infinite;

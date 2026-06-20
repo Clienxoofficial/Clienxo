@@ -1,8 +1,9 @@
 "use client";
 import { useState } from 'react';
-import { Sparkles, Briefcase, Users, Zap } from 'lucide-react';
+import { Briefcase, Users, Zap } from 'lucide-react';
 import LegalModal from './LegalModal';
 import { CONTACT, WA_BASE, TEL_LINK, MAIL_LINK } from '../constants/config';
+import ClienxoLogo from './ClienxoLogo';
 
 export default function Footer({ handleScrollTo, openContact }) {
   const [legalModal, setLegalModal] = useState(null); // 'privacy' | 'terms' | null
@@ -12,10 +13,7 @@ export default function Footer({ handleScrollTo, openContact }) {
       <footer className="footer-section">
         <div className="footer-container">
           <div className="footer-brand-col">
-            <div className="navbar-logo">
-              <Sparkles className="logo-spark" />
-              <span className="logo-text" data-text="CLIENXO">CLIEN<span className="text-gradient">XO</span></span>
-            </div>
+            <ClienxoLogo />
             <p className="mt-4">We build next-generation web platforms, AI applications, and custom digital systems for scale-ups and modern startups.</p>
             <div className="footer-socials">
               <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Briefcase size={18} /></a>
