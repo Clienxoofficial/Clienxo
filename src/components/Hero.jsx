@@ -6,6 +6,8 @@ export default function Hero({ handleScrollTo, openContact }) {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || window.innerWidth < 768) return;
+
     let animationFrameId;
     const handleScroll = () => {
       if (animationFrameId) cancelAnimationFrame(animationFrameId);

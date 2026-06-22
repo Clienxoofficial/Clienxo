@@ -307,11 +307,15 @@ const ScrollStack = ({
     let activeLenis = null;
 
     if (isTouchDevice) {
-      scrollTarget.addEventListener('scroll', handleScroll, { passive: true });
-    } else {
-      activeLenis = setupLenis();
+      return () => {
+        stackCompletedRef.current = false;
+        cardsRef.current = [];
+        transformsCache.clear();
+        isUpdatingRef.current = false;
+      };
     }
 
+    activeLenis = setupLenis();
     updateCardTransforms();
     
     return () => {
@@ -320,8 +324,6 @@ const ScrollStack = ({
       }
       if (activeLenis) {
         activeLenis.destroy();
-      } else if (isTouchDevice) {
-        scrollTarget.removeEventListener('scroll', handleScroll);
       }
       stackCompletedRef.current = false;
       cardsRef.current = [];
