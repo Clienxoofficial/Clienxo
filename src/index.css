@@ -38,10 +38,6 @@
   --robot-bg-end: #f1f5f9;
   --dot-field-glow-color: rgba(79, 70, 229, 0.1);
 
-  /* Clienxo logo colors */
-  --logo-metal-start: #475569;
-  --logo-metal-end: #0f172a;
-
   /* Scroll behavior */
   scroll-behavior: smooth;
   font-family: var(--font-body);
@@ -82,10 +78,6 @@ html.dark,
   --robot-bg-start: #0a0b14;
   --robot-bg-end: #060710;
   --dot-field-glow-color: rgba(99, 102, 241, 0.16);
-
-  /* Clienxo logo colors */
-  --logo-metal-start: #ffffff;
-  --logo-metal-end: #94a3b8;
 }
 
 html {

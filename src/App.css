@@ -32,41 +32,36 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   cursor: pointer;
+  height: 24px;
 }
 
-.logo-cx {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  display: inline-block;
+.logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
-.logo-text-group {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-  text-align: left;
+.logo-dark {
+  display: block;
+}
+
+.logo-light {
+  display: none;
+}
+
+[data-theme='light'] .logo-dark {
+  display: none;
+}
+
+[data-theme='light'] .logo-light {
+  display: block;
 }
 
 .logo-text {
   font-family: var(--font-heading);
-  font-size: 19px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  color: var(--text-primary);
-  text-transform: uppercase;
-}
-
-.logo-subtitle {
-  font-family: var(--font-body);
-  font-size: 5.5px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  margin-top: 1px;
 }
 
 .logo-spark {

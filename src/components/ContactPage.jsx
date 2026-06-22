@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, Mail, Phone, MessageSquare, ArrowRight, Check, ExternalLink, Sparkles, Send } from 'lucide-react';
 import { CONTACT, WA_BASE, TEL_LINK, MAIL_LINK } from '../constants/config';
+import ClienxoLogo from './ClienxoLogo';
 
 export default function ContactPage({ isOpen, onClose, formData, setFormData }) {
   const [formErrors, setFormErrors] = useState({});
@@ -54,10 +55,10 @@ export default function ContactPage({ isOpen, onClose, formData, setFormData }) 
 
     // Build WhatsApp message
     const serviceMap = {
-      web:      'Web Application',
-      mobile:   'Mobile App',
-      saas:     'SaaS Portal',
-      ai:       'AI Integration',
+      web: 'Web Application',
+      mobile: 'Mobile App',
+      saas: 'SaaS Portal',
+      ai: 'AI Integration',
       security: 'Security Audit',
     };
     const service = serviceMap[formData.projectType] || formData.projectType;
@@ -113,8 +114,7 @@ export default function ContactPage({ isOpen, onClose, formData, setFormData }) 
           <span>Back</span>
         </button>
         <div className="cp-header__brand">
-          <Sparkles size={14} />
-          <span>CLIEN<span className="text-gradient">XO</span></span>
+          <ClienxoLogo onClick={() => handleScrollTo('home')} />
         </div>
         <div className="cp-header__spacer" />
       </header>

@@ -13,7 +13,7 @@ export default function Footer({ handleScrollTo, openContact }) {
       <footer className="footer-section">
         <div className="footer-container">
           <div className="footer-brand-col">
-            <ClienxoLogo />
+            <ClienxoLogo onClick={() => handleScrollTo('home')} />
             <p className="mt-4">We build next-generation web platforms, AI applications, and custom digital systems for scale-ups and modern startups.</p>
             <div className="footer-socials">
               <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Briefcase size={18} /></a>
