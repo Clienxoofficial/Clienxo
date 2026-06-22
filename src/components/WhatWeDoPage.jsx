@@ -5,6 +5,7 @@ import {
   Users, Layers, Cpu, MessageSquare, Calendar, BookOpen,
   BarChart3, Box, Zap, ShoppingCart, Key, ShieldCheck, ArrowRight
 } from 'lucide-react';
+import ClienxoLogo from './ClienxoLogo';
 
 const SOLUTIONS_DATA = [
   {
@@ -127,8 +128,7 @@ export default function WhatWeDoPage({ isOpen, onClose, openContact }) {
           <span>Back</span>
         </button>
         <div className="wwdo-header__brand">
-          <Sparkles size={14} />
-          <span>CLIEN<span className="text-gradient">XO</span></span>
+          <ClienxoLogo onClick={() => handleScrollTo('home')} />
         </div>
         <div className="wwdo-header__spacer" />
       </header>

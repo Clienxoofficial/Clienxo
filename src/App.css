@@ -10992,7 +10992,7 @@ html[data-theme='light'] .service-card-footer,
 
 /* Mobile: 2-column compact grid */
 .wwdo-grid--mobile {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 
 /* Horizontal row card layout (icon left, text right) */
@@ -11747,7 +11747,7 @@ body,
 
   /* Compact 2-col grid on mobile inside the overlay */
   .wwdo-grid--mobile {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(1, 1fr) !important;
     gap: 12px !important;
     margin-bottom: 40px !important;
   }

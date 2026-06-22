@@ -20,8 +20,8 @@ export default function Header({
 
         <nav className="desktop-nav">
           <button className={`nav-link ${activeSection === 'home' ? 'active' : ''}`} onClick={() => handleScrollTo('home')}>Home</button>
-          <button className={`nav-link ${activeSection === 'services' ? 'active' : ''}`} onClick={() => handleScrollTo('services')}>Services</button>
           <button className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} onClick={() => handleScrollTo('about')}>About</button>
+          <button className={`nav-link ${activeSection === 'services' ? 'active' : ''}`} onClick={() => handleScrollTo('services')}>Services</button>
           <button className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} onClick={openContact}>Contact</button>
         </nav>
 
