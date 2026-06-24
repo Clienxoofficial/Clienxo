@@ -82,7 +82,7 @@ export default function Services({ handleScrollTo, setSelectedService, openConta
           <ScrollStack
             useWindowScroll={true}
             itemDistance={16}
-            itemStackDistance={50}
+            itemStackDistance={30}
             baseScale={0.85}
             itemScale={0.03}
             stackPosition="20%"

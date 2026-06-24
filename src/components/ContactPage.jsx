@@ -114,7 +114,7 @@ export default function ContactPage({ isOpen, onClose, formData, setFormData }) 
           <span>Back</span>
         </button>
         <div className="cp-header__brand">
-          <ClienxoLogo onClick={() => handleScrollTo('home')} />
+          <ClienxoLogo onClick={() => handleScrollTo('home')}/>
         </div>
         <div className="cp-header__spacer" />
       </header>

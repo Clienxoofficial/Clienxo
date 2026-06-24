@@ -71,17 +71,17 @@ export default function Hero({ handleScrollTo, openContact }) {
         {/* Statistics Row */}
         <div className="hero-stats-row">
           <div className="stat-item">
-            <span className="num text-gradient-neon">25+</span>
+            <span className="num text-gradient-neon">10+</span>
             <span className="label">Projects Delivered</span>
           </div>
           <div className="stat-divider"></div>
           <div className="stat-item">
-            <span className="num text-gradient-neon">15+</span>
+            <span className="num text-gradient-neon">5+</span>
             <span className="label">AI Solutions Built</span>
           </div>
           <div className="stat-divider"></div>
           <div className="stat-item">
-            <span className="num text-gradient-neon">10,000+</span>
+            <span className="num text-gradient-neon">5,000+</span>
             <span className="label">Hours Saved Through Automation</span>
           </div>
           <div className="stat-divider"></div>
