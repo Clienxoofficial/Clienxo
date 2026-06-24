@@ -2134,6 +2134,111 @@ section {
   }
 }
 
+/* Light theme overrides for Legal Modal */
+html:not(.dark) .lm-panel,
+[data-theme='light'] .lm-panel {
+  background: #ffffff;
+  border-color: rgba(79, 70, 229, 0.15);
+  box-shadow: 
+    0 0 0 1px rgba(79, 70, 229, 0.05),
+    0 30px 80px rgba(0, 0, 0, 0.15),
+    0 0 60px rgba(79, 70, 229, 0.05);
+}
+
+html:not(.dark) .lm-header,
+[data-theme='light'] .lm-header {
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.06) 0%, transparent 60%);
+}
+
+html:not(.dark) .lm-header__icon,
+[data-theme='light'] .lm-header__icon {
+  background: rgba(79, 70, 229, 0.08);
+  border-color: rgba(79, 70, 229, 0.2);
+  color: var(--accent-primary);
+}
+
+html:not(.dark) .lm-title,
+[data-theme='light'] .lm-title {
+  color: var(--text-primary);
+}
+
+html:not(.dark) .lm-updated,
+[data-theme='light'] .lm-updated {
+  color: var(--text-muted);
+}
+
+html:not(.dark) .lm-close,
+[data-theme='light'] .lm-close {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.06);
+  color: var(--text-secondary);
+}
+
+html:not(.dark) .lm-close:hover,
+[data-theme='light'] .lm-close:hover {
+  background: rgba(79, 70, 229, 0.1);
+  border-color: rgba(79, 70, 229, 0.3);
+  color: var(--accent-primary);
+}
+
+html:not(.dark) .lm-body,
+[data-theme='light'] .lm-body {
+  scrollbar-color: rgba(79, 70, 229, 0.3) transparent;
+}
+
+html:not(.dark) .lm-section,
+[data-theme='light'] .lm-section {
+  border-left-color: rgba(79, 70, 229, 0.25);
+}
+
+html:not(.dark) .lm-section__heading h3,
+[data-theme='light'] .lm-section__heading h3 {
+  color: #4338ca;
+}
+
+html:not(.dark) .lm-section__body p,
+html:not(.dark) .lm-bullet,
+[data-theme='light'] .lm-section__body p,
+[data-theme='light'] .lm-bullet {
+  color: var(--text-secondary);
+}
+
+html:not(.dark) .lm-section__body strong,
+[data-theme='light'] .lm-section__body strong {
+  color: var(--text-primary);
+}
+
+html:not(.dark) .lm-contact-line,
+[data-theme='light'] .lm-contact-line {
+  color: var(--accent-primary);
+}
+
+html:not(.dark) .lm-footer,
+[data-theme='light'] .lm-footer {
+  border-top-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.01);
+}
+
+html:not(.dark) .lm-footer p,
+[data-theme='light'] .lm-footer p {
+  color: var(--text-muted);
+}
+
+html:not(.dark) .lm-close-btn,
+[data-theme='light'] .lm-close-btn {
+  background: rgba(79, 70, 229, 0.08);
+  border-color: rgba(79, 70, 229, 0.2);
+  color: var(--accent-primary);
+}
+
+html:not(.dark) .lm-close-btn:hover,
+[data-theme='light'] .lm-close-btn:hover {
+  background: rgba(79, 70, 229, 0.15);
+  border-color: rgba(79, 70, 229, 0.3);
+  color: var(--accent-secondary);
+}
+
 
 /* ==========================================
    RESPONSIVE DESIGN BREAKPOINTS
