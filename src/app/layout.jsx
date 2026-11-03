@@ -25,7 +25,9 @@ export const metadata = {
   description: 'Clienxo - Custom Software Development, Cloud Consulting, Cybersecurity, and AI Solutions.',
   keywords: 'Clienxo, Software Development, IT Consulting, Tech Partner, Web Apps, Mobile Apps, Cloud Services',
   icons: {
-    icon: '/favicon.svg',
+    icon: '/assests/favicon.png',
+    shortcut: '/assests/favicon.png',
+    apple: '/assests/favicon.png',
   },
 };
 
